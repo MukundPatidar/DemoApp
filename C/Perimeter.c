@@ -2,7 +2,6 @@
 
 int main ()
 {
-    //nsdfbwafbwibfgughfwbsabiyabgfwbsabcyuagwfywevfwjbfwigfw chjsadbvybvwfvw sfgwif
     float length, width;
 
     printf("Enter length of rectangle in cm : ");
