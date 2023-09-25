@@ -11,7 +11,7 @@ int main ()
     scanf("%f", &width);
 
     float Ans = 2 * (length + width);
-    printf("Perimeter of rectagle is : %f", Ans);
+    printf("Perimeter of rectagle is : %g", Ans);
 
     return 0;
 }
