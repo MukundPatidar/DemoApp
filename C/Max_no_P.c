@@ -8,9 +8,9 @@ int main ()
     do{
         int a, b;
         printf("enter first number : ");
-        sacnf("%d", &a);
+        scanf("%d", &a);
         printf("enter second number : ");
-        sacnf("%d", &b);
+        scanf("%d", &b);
 
         maximum_no(&a, &b);
         printf("%d is grater then %d", a, b);
@@ -28,7 +28,5 @@ void maximum_no(int *a,int *b){
         int t = *a;
             *a = *b;
             *b = t;
-    } else if(*a == *b){
-        printf("%d and %d is equal", *a, *b);
-    }
+    } 
 }
