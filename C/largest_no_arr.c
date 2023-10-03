@@ -5,18 +5,29 @@ void check_larger (int arr[],int n);
 
 int main ()
 {
-    int arr[10];
+    int x,n;
+    int arr[n];
 
-    takeinput (arr,10);
+    do{
+        printf("Enter the length of array : ");
+        scanf("%d",&n);
 
-    check_larger (arr,10);
+        takeinput (arr,n);
+
+        check_larger (arr,n);
+
+        printf("\n  -------------------------------------------------\n");
+        printf("You wnat to continue \n if yes tuype '1' \t if no type '0' :- ");
+        scanf("%d",&x);
+
+    } while (x == 1);
     
     return 0;
 }
 
 void takeinput (int arr[],int n){
     for(int i=0; i<n; i++){
-        printf("%d index : ",i);
+        printf("%d index : ",i+1);
         scanf("%d",&arr[i]);
     }
 }
