@@ -6,10 +6,10 @@ int main ()
     printf("Enter any numder : ");
     scanf("%d", &x);
 
-    if(x % 2 == 0){
-        printf("%d is divisible by 2",x);
+    if(x % 19 == 0){
+        printf("%d is divisible by 19",x);
     } else {
-        printf("%d is not divisible by 2",x);
+        printf("%d is not divisible by 19",x);
     }
 
     return 0;
