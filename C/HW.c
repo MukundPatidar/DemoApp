@@ -30,7 +30,7 @@ int main () {
         }
  printf(" ");
         // alphabet 'E'
-        // if (alf1 == '91') {
+        // if (alf1 == 90) {
         //     alf1 = 'A';
         // }
         if (a == 1) {
@@ -49,7 +49,7 @@ int main () {
         }
  printf(" ");
         // alphabet 'L'
-        // if (alf2 == '91') {
+        // if (alf2 == 90) {
         //     alf2 = 'A';
         // }
         if (a == 2) {
@@ -68,7 +68,7 @@ int main () {
         }
  printf(" ");
         // alphabet 'L'
-        // if (alf3 == '91') {
+        // if (alf3 == 90) {
         //     alf3 = 'A';
         // }
         if (a == 3) {
@@ -87,7 +87,7 @@ int main () {
         }
  printf(" ");
         // alphabet 'O'
-        // if (alf4 == '91') {
+        // if (alf4 == 90) {
         //     alf4 = 'A';
         // }
         if (a == 4) {
@@ -108,6 +108,9 @@ int main () {
         printf("   ");
 
         // alphabet 'W'
+        // if (alf5 == 90) {
+        //     alf5 = 'A';
+        // }
         if (a == 5) {
             if (alf5 != 87) {
                 prt(alf5);
@@ -124,6 +127,9 @@ int main () {
         }
  printf(" ");
         // alphabet 'O'
+        // if (alf6 == 90) {
+        //     alf6 = 'A';
+        // }
         if (a == 6) {
             if (alf6 != 79) {
                 prt(alf6);
@@ -140,6 +146,9 @@ int main () {
         }
  printf(" ");
         // alphabet 'R'
+        // if (alf7 == 90) {
+        //     alf7 = 'A';
+        // }
         if (a == 7) {
             if (alf7 != 82) {
                 prt(alf7);
@@ -156,6 +165,9 @@ int main () {
         }
  printf(" ");
         // alphabet 'L'
+        // if (alf8 == 90) {
+        //     alf8 = 'A';
+        // }
         if (a == 8) {
             if (alf8 != 76) {
                 prt(alf8);
@@ -172,6 +184,9 @@ int main () {
         }
  printf(" ");
         // alphabet 'D'
+        // if (alf9 == 90) {
+        //     alf9 = 'A';
+        // }
         if (a == 9) {
             if (alf9 != 68) {
                 prt(alf9);
