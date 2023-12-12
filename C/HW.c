@@ -16,7 +16,7 @@ int main () {
     char alf8 = 'Q';
     char alf9 = 'S';
 
-    do {
+    while( a != 10){
         printf("          "); 
 
         // alphabet 'H'
@@ -28,7 +28,7 @@ int main () {
             prt(alf);
             a = 1;
         }
- printf(" ");
+        printf(" ");
         // alphabet 'E'
         // if (alf1 == 91) {
         //     alf1 = 'A';
@@ -47,7 +47,7 @@ int main () {
             prt(alf1);
             alf1++;
         }
- printf(" ");
+        printf(" ");
         // alphabet 'L'
         // if (alf2 == 91) {
         //     alf2 = 'A';
@@ -66,7 +66,7 @@ int main () {
             prt(alf2);
             alf2++;
         }
- printf(" ");
+        printf(" ");
         // alphabet 'L'
         // if (alf3 == 91) {
         //     alf3 = 'A';
@@ -85,7 +85,7 @@ int main () {
             prt(alf3);
             alf3++;
         }
- printf(" ");
+        printf(" ");
         // alphabet 'O'
         // if (alf4 == 91) {
         //     alf4 = 'A';
@@ -115,6 +115,7 @@ int main () {
             if (alf5 != 87) {
                 prt(alf5);
                 alf5++;
+        
             }
             else {
                 prt(alf5);
@@ -125,7 +126,7 @@ int main () {
             prt(alf5);
             alf5++;
         }
- printf(" ");
+        printf(" ");
         // alphabet 'O'
         // if (alf6 == 91) {
         //     alf6 = 'A';
@@ -144,7 +145,7 @@ int main () {
             prt(alf6);
             alf6++;
         }
- printf(" ");
+        printf(" ");
         // alphabet 'R'
         // if (alf7 == 91) {
         //     alf7 = 'A';
@@ -163,7 +164,7 @@ int main () {
             prt(alf7);
             alf7++;
         }
- printf(" ");
+        printf(" ");
         // alphabet 'L'
         // if (alf8 == 91) {
         //     alf8 = 'A';
@@ -182,7 +183,7 @@ int main () {
             prt(alf8);
             alf8++;
         }
- printf(" ");
+        printf(" ");
         // alphabet 'D'
         // if (alf9 == 91) {
         //     alf9 = 'A';
@@ -204,7 +205,7 @@ int main () {
 
         printf("\n");
 
-    } while( a != 10);
+    }
 
     return 0;
 }

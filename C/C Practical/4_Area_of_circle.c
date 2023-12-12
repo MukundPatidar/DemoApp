@@ -7,7 +7,7 @@ int main ()
     printf("Enter the redius of circle : ");
     scanf("%f",&redius);
 
-    area = 3.14159265359 * redius * redius;
+    area = 3.14 * redius * redius;
 
     printf("Area of circle is : %.2f",area);
     
