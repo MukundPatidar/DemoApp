@@ -9,8 +9,7 @@ int main ()
     printf("Range of prime number from 1 to %d\n\n",x);
 
     for(int i=1; i<=x; i++){
-        if(i % 2 == 0 || i % 3 == 0){
-        } else {
+        if(i % 2 != 0 && i % 3 != 0){
             printf("%d, ",i);
             count++;
         }

@@ -7,7 +7,7 @@ int main ()
     printf("Enter Principal amount : ");
     scanf("%f", &principal);
 
-    printf("Enter rate of intrest in percent : ");
+    printf("Enter rate of interest in percent : ");
     scanf("%f", &rate);
 
     printf("Enter time in years : ");
@@ -15,7 +15,7 @@ int main ()
 
     float si = principal * time * rate / 100 ;
 
-    printf("Intrest earned : %.2f", si);
+    printf("\n Interest earned : %.2f", si);
     printf("\n Principal Amount : %.2f", principal);
     printf("\n Total amount : %.2f", si + principal);
 
