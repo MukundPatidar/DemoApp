@@ -16,7 +16,7 @@ int main ()
     }else if(x >= 81 && x <= 100){
         printf("You are Pass with A grade");
     }else {
-        printf("Invelid precentage");
+        printf("Invalid precentage");
     }
 
     return 0;

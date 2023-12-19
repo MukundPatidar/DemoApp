@@ -12,7 +12,7 @@ int main ()
     }else if(x >= 33 && x <= 100){
         printf("You are Pass");
     }else {
-        printf("Invelid marks");
+        printf("Invalid marks");
     }
 
     return 0;
