@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Student Details</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to SAGE University</h1>
+        <nav>
+            <a href="#" onclick="showPage('home')">Home</a>
+            <a href="#" onclick="showPage('login')">Login</a>
+            <a href="#" onclick="showPage('signup')">Signup</a>
+            <a href="#" onclick="showPage('student')">Student Details</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </nav>
+    </header>
+    <div class="bg">
+    <section id="home">
+        <h2>Home</h2>
+        <p>This is the home page content.</p>
+    </section>
+
+    <section id="login" style="display:none;">
+        <h2>Login</h2>
+        <form id="loginForm" onsubmit="return loginUser()">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <section id="signup" style="display:none;">
+        <h2>Signup</h2>
+        <form id="signupForm" onsubmit="return signupUser()">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Password:</label>
+            <input type="password" id="signupPassword" name="password" required>
+            <button type="submit">Signup</button>
+        </form>
+    </section>
+
+    <section id="student" style="display:none;">
+        <h2>Student Details</h2>
+        <p id="studentContent">Please login to view student details.</p>
+    </section>
+    </div>
+    <script>
+        function showPage(pageId) {
+            // Hide all sections
+            var sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+
+            // Show the selected section
+            var selectedSection = document.getElementById(pageId);
+            selectedSection.style.display = 'block';
+
+            // Update content based on the selected page
+            if (pageId === 'student') {
+                updateStudentDetails();
+            }
+        }
+
+        function updateStudentDetails() {
+            var isLoggedIn = sessionStorage.getItem('isLoggedIn');
+            var studentContent = document.getElementById('studentContent');
+
+            if (isLoggedIn) {
+                studentContent.innerHTML = 'Welcome, logged-in user! Student details will be displayed here.';
+            } else {
+                studentContent.innerHTML = 'Please login to view student details.';
+            }
+        }
+
+        function loginUser() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Simulate a successful login (you would typically validate credentials on the server)
+            if (username === "user" && password === "password") {
+                sessionStorage.setItem('isLoggedIn', true);
+                alert("Login successful!");
+                showPage('student'); // Redirect to the student page after login
+                updateStudentDetails();
+            } else {
+                alert("Invalid username or password.");
+            }
+
+            return false; // Prevent form submission
+        }
+
+        function signupUser() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("signupPassword").value;
+
+            // Simulate a successful signup (you would typically send data to the server)
+            alert("Signup successful!");
+
+            return false; // Prevent form submission
+        }
+
+        function logout() {
+            sessionStorage.removeItem('isLoggedIn');
+            showPage('home');
+        }
+
+        // Initialize by showing the home page
+        showPage('home');
+    </script>
+</body>
+</html>
+
