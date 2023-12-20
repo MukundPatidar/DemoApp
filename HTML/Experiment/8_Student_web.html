@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Student_web_style.css">
     <title>Student Details</title>
 </head>
 <body>
@@ -39,19 +39,75 @@
         <form id="signupForm" onsubmit="return signupUser()">
             <label for="name">Full Name:</label>
             <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
             <label for="password">Password:</label>
             <input type="password" id="signupPassword" name="password" required>
+            <label for="semester">Semester:</label>
+            <input type="text" id="semester" name="semester" required>
+            <label for="Course">Course:</label>
+            <input type="text" id="Course" name="Course" required>
+            <label for="Enrollment">Enrollment:</label>
+            <input type="text" id="Enrollment" name="Enrollment" required>
+            <label for="Mobile No.">Mobile No.:</label>
+            <input type="text" id="Mobile No." name="Mobile No." required>
             <button type="submit">Signup</button>
         </form>
     </section>
 
-    <section id="student" style="display:none;">
+    <section id="student">
         <h2>Student Details</h2>
-        <p id="studentContent">Please login to view student details.</p>
+        <table border="1px">
+            <tr>
+             <th>S.No.</th>   
+            <th>Name</th>
+            <th>Sem</th>
+            <th>Course</th>
+            <th>Enrollment no.</th>
+            <th>Mobile no.</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Mukund Patidar</td>
+            <td>1st sem</td>
+            <td>BCA</td>
+            <td>54965463</td>
+            <td>9852357528</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Rashi Patidar</td>
+            <td>1st sem</td>
+            <td>BCA</td>
+            <td>87542546</td>
+            <td>6285456917</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Priya Dangi</td>
+            <td>1st sem</td>
+            <td>BCA</td>
+            <td>876875463</td>
+            <td>6652397526</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Rahul Verma</td>
+            <td>1st sem</td>
+            <td>BCA</td>
+            <td>456485673</td>
+            <td>8235754121</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Mumukshu sharma</td>
+            <td>1st sem</td>
+            <td>BCA</td>
+            <td>56792355</td>
+            <td>8852352528</td>
+        </tr>
+    
+        </table>
     </section>
-    </div>
+    
     <script>
         function showPage(pageId) {
             // Hide all sections
@@ -117,6 +173,7 @@
         // Initialize by showing the home page
         showPage('home');
     </script>
+   </div>
 </body>
 </html>
 
