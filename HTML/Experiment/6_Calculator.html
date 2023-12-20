@@ -1,75 +1,40 @@
-<!DOCTYPE html> 
-<html> 
-
-<head> 
-	<title>HTML Calculator</title> 
-
-	<!-- For styling -->
-	<style> 
-		table { 
-			border: 1px solid black; 
-			margin-left: auto; 
-			margin-right: auto; 
-		} 
-		
-		input[type="button"] { 
-			width: 100%; 
-			padding: 20px 40px; 
-			background-color: green; 
-			color: white; 
-			font-size: 24px; 
-			font-weight: bold; 
-			border: none; 
-			border-radius: 5px; 
-		} 
-		
-		input[type="text"] { 
-			padding: 20px 30px; 
-			font-size: 24px; 
-			font-weight: bold; 
-			border: none; 
-			border-radius: 5px; 
-			border: 2px solid black; 
-		} 
-	</style> 
-</head> 
-
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Calculator using HTML, CSS and JavaScript</title>
+  <link rel="stylesheet" href="Calculator_styles.css">
+</head>
 <body> 
-
-	<!-- Create table -->
-	<table id="calcu"> 
-		<tr> 
-			<td colspan="3"> 
-				<input type="text" id="result"> 
-			</td> 
-			<td><input type="button" value="c"></td> 
-		</tr> 
-
-		<tr> 
-			<td><input type="button" value="1"></td> 
-			<td><input type="button" value="2"></td> 
-			<td><input type="button" value="3"></td> 
-			<td><input type="button" value="/"></td> 
-		</tr> 
-		<tr> 
-			<td><input type="button" value="4"></td> 
-			<td><input type="button" value="5"></td> 
-			<td><input type="button" value="6"></td> 
-			<td><input type="button" value="*"></td> 
-		</tr> 
-		<tr> 
-			<td><input type="button" value="7"></td> 
-			<td><input type="button" value="8"></td> 
-			<td><input type="button" value="9"></td> 
-			<td><input type="button" value="-"></td> 
-		</tr> 
-		<tr> 
-			<td><input type="button" value="0"></td> 
-			<td><input type="button" value="."></td> 
-			<td><input type="button" value="="></td> 
-			<td><input type="button" value="+"></td> 
-		</tr> 
-	</table> 
-</body> 
-
-</html> 
+<table class="calculator" >
+  <tr>
+    <td colspan="3"> <input class="display-box" type="text" id="result" disabled /> </td>
+    <td> <input type="button" value="C" onclick="clearScreen()" id="btn" /> </td>
+  </tr>
+  <tr>
+    <td> <input type="button" value="1" onclick="display('1')" /> </td>
+    <td> <input type="button" value="2" onclick="display('2')" /> </td>
+    <td> <input type="button" value="3" onclick="display('3')" /> </td>
+    <td> <input type="button" value="/" onclick="display('/')" /> </td>
+  </tr>
+  <tr>
+    <td> <input type="button" value="4" onclick="display('4')" /> </td>
+    <td> <input type="button" value="5" onclick="display('5')" /> </td>
+    <td> <input type="button" value="6" onclick="display('6')" /> </td>
+    <td> <input type="button" value="-" onclick="display('-')" /> </td>
+  </tr>
+  <tr>
+    <td> <input type="button" value="7" onclick="display('7')" /> </td>
+    <td> <input type="button" value="8" onclick="display('8')" /> </td>
+    <td> <input type="button" value="9" onclick="display('9')" /> </td>
+    <td> <input type="button" value="+" onclick="display('+')" /> </td>
+  </tr>
+  <tr>
+    <td> <input type="button" value="." onclick="display('.')" /> </td>
+    <td> <input type="button" value="0" onclick="display('0')" /> </td>
+    <td> <input type="button" value="=" onclick="calculate()" id="btn" /> </td>
+    <td> <input type="button" value="*" onclick="display('*')" /> </td>
+  </tr>
+</table>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
