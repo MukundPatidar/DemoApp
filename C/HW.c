@@ -5,16 +5,16 @@ void prt(char a);
 int main () {
     
     int a = 0;
-    char alf = 'A';
-    char alf1 = 'C';
-    char alf2 = 'E';
-    char alf3 = 'G';
-    char alf4 = 'I';
-    char alf5 = 'K';
-    char alf6 = 'M';
-    char alf7 = 'O';
-    char alf8 = 'Q';
-    char alf9 = 'S';
+    char alf = '[';
+    char alf1 = '[';
+    char alf2 = '[';
+    char alf3 = '[';
+    char alf4 = '[';
+    char alf5 = '[';
+    char alf6 = '[';
+    char alf7 = '[';
+    char alf8 = '[';
+    char alf9 = '[';
 
     while( a != 10){
         printf("          "); 
@@ -43,10 +43,10 @@ int main () {
                 a = 2;
             }
         }
-        else{
-            prt(alf1);
-            alf1++;
-        }
+        // else{
+        //     prt(alf1);
+        //     alf1++;
+        // }
         printf(" ");
         // alphabet 'L'
         // if (alf2 == 91) {
@@ -62,10 +62,10 @@ int main () {
                 a = 3;
             }
         }
-        else{
-            prt(alf2);
-            alf2++;
-        }
+        // else{
+        //     prt(alf2);
+        //     alf2++;
+        // }
         printf(" ");
         // alphabet 'L'
         // if (alf3 == 91) {
@@ -81,10 +81,10 @@ int main () {
                 a = 4;
             }
         }
-        else{
-            prt(alf3);
-            alf3++;
-        }
+        // else{
+        //     prt(alf3);
+        //     alf3++;
+        // }
         printf(" ");
         // alphabet 'O'
         // if (alf4 == 91) {
@@ -100,10 +100,10 @@ int main () {
                 a = 5;
             }
         }
-        else{
-            prt(alf4);
-            alf4++;
-        }
+        // else{
+        //     prt(alf4);
+        //     alf4++;
+        // }
 
         printf("   ");
 
@@ -121,10 +121,10 @@ int main () {
                 prt(alf5);
                 a = 6;
             }
-        }
-        else{
-            prt(alf5);
-            alf5++;
+        // }
+        // else{
+        //     prt(alf5);
+        //     alf5++;
         }
         printf(" ");
         // alphabet 'O'
@@ -141,10 +141,10 @@ int main () {
                 a = 7;
             }
         }
-        else{
-            prt(alf6);
-            alf6++;
-        }
+        // else{
+        //     prt(alf6);
+        //     alf6++;
+        // }
         printf(" ");
         // alphabet 'R'
         // if (alf7 == 91) {
@@ -160,10 +160,10 @@ int main () {
                 a = 8;
             }
         }
-        else{
-            prt(alf7);
-            alf7++;
-        }
+        // else{
+        //     prt(alf7);
+        //     alf7++;
+        // }
         printf(" ");
         // alphabet 'L'
         // if (alf8 == 91) {
@@ -179,10 +179,10 @@ int main () {
                 a = 9;
             }
         }
-        else{
-            prt(alf8);
-            alf8++;
-        }
+        // else{
+        //     prt(alf8);
+        //     alf8++;
+        // }
         printf(" ");
         // alphabet 'D'
         // if (alf9 == 91) {
@@ -198,10 +198,10 @@ int main () {
                 a = 10;
             }
         }
-        else{
-            prt(alf9);
-            alf9++;
-        }
+        // else{
+        //     prt(alf9);
+        //     alf9++;
+        // }
 
         printf("\n");
 
