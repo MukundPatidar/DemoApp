@@ -5,7 +5,7 @@ void prt(char a);
 int main () {
     
     int a = 0;
-    char alf = '[';
+    char alf0 = '[';
     char alf1 = '[';
     char alf2 = '[';
     char alf3 = '[';
@@ -20,19 +20,18 @@ int main () {
         printf("          "); 
 
         // alphabet 'H'
-        if (alf != 72) {
-            prt(alf);
-            alf++;
+
+        if (alf0 != 72) {
+            prt(alf0);
+            alf0++;
         }
         else {
-            prt(alf);
+            prt(alf0);
             a = 1;
         }
-        printf(" ");
+        
         // alphabet 'E'
-        // if (alf1 == 91) {
-        //     alf1 = 'A';
-        // }
+        
         if (a == 1) {
             if (alf1 != 69) {
                 prt(alf1);
@@ -43,15 +42,9 @@ int main () {
                 a = 2;
             }
         }
-        // else{
-        //     prt(alf1);
-        //     alf1++;
-        // }
-        printf(" ");
+
         // alphabet 'L'
-        // if (alf2 == 91) {
-        //     alf2 = 'A';
-        // }
+        
         if (a == 2) {
             if (alf2 != 76) {
                 prt(alf2);
@@ -62,15 +55,9 @@ int main () {
                 a = 3;
             }
         }
-        // else{
-        //     prt(alf2);
-        //     alf2++;
-        // }
-        printf(" ");
+
         // alphabet 'L'
-        // if (alf3 == 91) {
-        //     alf3 = 'A';
-        // }
+        
         if (a == 3) {
             if (alf3 != 76) {
                 prt(alf3);
@@ -81,15 +68,9 @@ int main () {
                 a = 4;
             }
         }
-        // else{
-        //     prt(alf3);
-        //     alf3++;
-        // }
-        printf(" ");
+
         // alphabet 'O'
-        // if (alf4 == 91) {
-        //     alf4 = 'A';
-        // }
+        
         if (a == 4) {
             if (alf4 != 79) {
                 prt(alf4);
@@ -100,17 +81,11 @@ int main () {
                 a = 5;
             }
         }
-        // else{
-        //     prt(alf4);
-        //     alf4++;
-        // }
 
         printf("   ");
 
         // alphabet 'W'
-        // if (alf5 == 91) {
-        //     alf5 = 'A';
-        // }
+        
         if (a == 5) {
             if (alf5 != 87) {
                 prt(alf5);
@@ -121,16 +96,10 @@ int main () {
                 prt(alf5);
                 a = 6;
             }
-        // }
-        // else{
-        //     prt(alf5);
-        //     alf5++;
         }
-        printf(" ");
+
         // alphabet 'O'
-        // if (alf6 == 91) {
-        //     alf6 = 'A';
-        // }
+        
         if (a == 6) {
             if (alf6 != 79) {
                 prt(alf6);
@@ -141,15 +110,9 @@ int main () {
                 a = 7;
             }
         }
-        // else{
-        //     prt(alf6);
-        //     alf6++;
-        // }
-        printf(" ");
+
         // alphabet 'R'
-        // if (alf7 == 91) {
-        //     alf7 = 'A';
-        // }
+        
         if (a == 7) {
             if (alf7 != 82) {
                 prt(alf7);
@@ -160,15 +123,9 @@ int main () {
                 a = 8;
             }
         }
-        // else{
-        //     prt(alf7);
-        //     alf7++;
-        // }
-        printf(" ");
+
         // alphabet 'L'
-        // if (alf8 == 91) {
-        //     alf8 = 'A';
-        // }
+        
         if (a == 8) {
             if (alf8 != 76) {
                 prt(alf8);
@@ -179,15 +136,9 @@ int main () {
                 a = 9;
             }
         }
-        // else{
-        //     prt(alf8);
-        //     alf8++;
-        // }
-        printf(" ");
+
         // alphabet 'D'
-        // if (alf9 == 91) {
-        //     alf9 = 'A';
-        // }
+        
         if (a == 9) {
             if (alf9 != 68) {
                 prt(alf9);
@@ -198,10 +149,6 @@ int main () {
                 a = 10;
             }
         }
-        // else{
-        //     prt(alf9);
-        //     alf9++;
-        // }
 
         printf("\n");
 
@@ -209,8 +156,8 @@ int main () {
 
     return 0;
 }
-
+    
 void prt(char a) {
     printf("%c",a);
-    return;
+    return ;
 }
