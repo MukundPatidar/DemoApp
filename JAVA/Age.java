@@ -17,6 +17,8 @@ public class Age {
 
         System.out.print("Please enter your age : ");
         int age = sc.nextInt();
+        
+        sc.close();
 
         ag(age);
         // Age exObj = new Age();
