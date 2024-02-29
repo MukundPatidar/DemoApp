@@ -14,7 +14,7 @@ public class Calculator_21 {
         char operators[] = new char[100];
         //to store result
         double result = 0;
-
+        
         //input
         for(int i=1; i<i+1; i++){
 
@@ -47,15 +47,16 @@ public class Calculator_21 {
                         status = false;
                     }
                 } while (status == false);
+             
+                //if user enter '=' then exit the loop 
+                if(operators[count] == '='){
+                    break;
+                }
+                
                 count++;
             }
-                
-            //if user enter '=' then exit the loop 
-            if(operators[count] == '='){
-                break;
-            }
         }
-
+        
         //calculation
         result = numbers[0];
         for(int i=0; i<count; i++){
