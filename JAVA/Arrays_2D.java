@@ -14,7 +14,7 @@ public class Arrays_2D {
                matrix[i][j] = sc.nextInt();
            }
       }
-
+      sc.close();
 
       System.out.println("The Spiral Order Matrix is : ");
       int rowStart = 0;

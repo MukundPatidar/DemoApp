@@ -58,7 +58,7 @@ public class Calculator_2 {
                 count++;
             }
         }
-
+        sc.close();
         //calculation
         result = numbers[0];
         for(int i=0; i<operators.length; i++){

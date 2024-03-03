@@ -35,5 +35,6 @@ public class Arrays1 {
         for (i=0; i<ace.length; i++) {
             System.out.print(ace[i] + ", ");
         }
+        sc.close();
     }
 }

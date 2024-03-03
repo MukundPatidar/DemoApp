@@ -16,7 +16,7 @@ public class Array {
         System.out.print("Enter name "+(i+1)+" :");
         name [i] = sc.next();
       }
-    
+      sc.close();
     //output
     System.out.println("Your enterd name is.");
     for(i=0; i<name.length; i++) {

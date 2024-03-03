@@ -19,7 +19,7 @@ public class somodd_f {
 
         System.out.print("Please enter a number : ");
         int n = sc.nextInt();
-
+        sc.close();
         System.out.println(Ocal (n));
     }
 }

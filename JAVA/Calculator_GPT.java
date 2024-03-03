@@ -13,6 +13,7 @@ public class Calculator_GPT {
         System.out.print("Enter the operator (+, -, *, /): ");
         char operator = scanner.next().charAt(0);
 
+        scanner.close();
         double result = 0;
 
         switch (operator) {
@@ -40,6 +41,5 @@ public class Calculator_GPT {
 
         System.out.println("Result: " + result);
 
-        scanner.close();
     }
 }

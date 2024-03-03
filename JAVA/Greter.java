@@ -25,8 +25,8 @@ public class Greter {
         System.out.print("Enter second number : ");
         int b = sc.nextInt();
 
-        Greter exObj = new Greter();
-        exObj.grt(a, b);;
+        grt(a, b);
         // System.out.println(grt(a, b));
+        sc.close();
     }
 }

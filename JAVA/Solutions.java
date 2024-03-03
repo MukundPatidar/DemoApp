@@ -11,5 +11,6 @@ public class Solutions {
       Scanner sc = new Scanner(System.in);
       int age = sc.nextInt();
       System.out.println(isElligible(age));
+      sc.close();
    }   
 }

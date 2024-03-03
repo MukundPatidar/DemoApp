@@ -31,5 +31,6 @@ public class Marks {
         // float total = ((Sub1 + Sub2 + Sub3 + Sub4 + Sub5) / (Out1 + Out2 + Out3 + Out4 + Out5))*100;
 
         System.out.println("Your score is "+total+"%");
+        sc.close();
     }
 }

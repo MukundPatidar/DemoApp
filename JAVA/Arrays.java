@@ -12,7 +12,7 @@ public class Arrays {
       for(int i=0; i<size; i++) {
           numbers[i] = sc.nextInt();
       }
-
+      sc.close();
 
       int max = Integer.MIN_VALUE;
       int min = Integer.MAX_VALUE;
