@@ -15,7 +15,7 @@ public class Sum_odd {
                 x += i;
             }
         }
-
+        sc.close();
         System.out.println("Sum of all odd numbers till "+n+" is : "+x);
     }
 }
