@@ -21,8 +21,6 @@ public class Age {
         sc.close();
 
         ag(age);
-        // Age exObj = new Age();
-        // exObj.ag(age);
     }
     
 }
