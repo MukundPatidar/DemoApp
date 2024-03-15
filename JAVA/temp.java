@@ -6,11 +6,14 @@ public class temp {
   
    public static void main(String args[]) {
      
+    //creating arrays
+    //to count all letters 
     int count[] = new int[10];
-    char alf[] = new char[10];
+    //to store all letters
+    char letters[] = new char[10];
 
     for (int i = 0; i < 10; i++) {
-        alf[i] = 'A';
+        letters[i] = 'A';
         count[i] = 0;
     }
     
@@ -19,22 +22,22 @@ public class temp {
 
         // alphabet 'H'
         if(count[0] < 2005) {
-          prt(alf[0]);
-          alf[0]++;
+          prt(letters[0]);
+          letters[0]++;
           count[0]++;
         }
         else {
-          if (alf[0] != 72) {
-            prt(alf[0]);
-            alf[0]++;
+          if (letters[0] != 72) {
+            prt(letters[0]);
+            letters[0]++;
           }
           else {
-              prt(alf[0]);
+              prt(letters[0]);
               count[0] = 2212;
           }
         }
-        if(alf[0] == 90) {
-          alf[0] = 'A' ;
+        if(letters[0] == 90) {
+          letters[0] = 'A' ;
         }
         
         
@@ -42,88 +45,88 @@ public class temp {
         // alphabet 'E'
         if (count[0] == 2212) {
           if(count[1] < 2005) {
-            prt(alf[1]);
-            alf[1]++ ;
+            prt(letters[1]);
+            letters[1]++ ;
             count[1]++ ;
           }
           else {
-            if (alf[1] != 69) {
-                prt(alf[1]);
-                alf[1]++;
+            if (letters[1] != 69) {
+                prt(letters[1]);
+                letters[1]++;
             }
             else {
-                prt(alf[1]);
+                prt(letters[1]);
                 count[1] = 2212;
             }
           }
-          if(alf[1] == 90) {
-            alf[1] = 'A' ;
+          if(letters[1] == 90) {
+            letters[1] = 'A' ;
           }
         }
 
         // alphabet 'L'
         if (count[1] == 2212) {
           if(count[2] < 2005) {
-            prt(alf[2]);
-            alf[2]++ ;
+            prt(letters[2]);
+            letters[2]++ ;
             count[2]++ ;
           }
           else {
-            if (alf[2] != 76) {
-                prt(alf[2]);
-                alf[2]++;
+            if (letters[2] != 76) {
+                prt(letters[2]);
+                letters[2]++;
             }
             else {
-                prt(alf[2]);
+                prt(letters[2]);
                 count[2] = 2212;
             }
           }
-          if(alf[2] == 90) {
-            alf[2] = 'A' ;
+          if(letters[2] == 90) {
+            letters[2] = 'A' ;
           }
         }
 
         // alphabet 'L'
         if (count[2] == 2212) {
           if(count[3] < 2005) {
-            prt(alf[3]);
-            alf[3]++ ;
+            prt(letters[3]);
+            letters[3]++ ;
             count[3]++ ;
           }
           else {
-            if (alf[3] != 76) {
-                prt(alf[3]);
-                alf[3]++;
+            if (letters[3] != 76) {
+                prt(letters[3]);
+                letters[3]++;
             }
             else {
-                prt(alf[3]);
+                prt(letters[3]);
                 count[3] = 2212;
             }
           }
-          if(alf[3] == 90) {
-            alf[3] = 'A' ;
+          if(letters[3] == 90) {
+            letters[3] = 'A' ;
           }
         }
 
         // alphabet 'O'
         if (count[3] == 2212) {
           if(count[4] < 2005) {
-            prt(alf[4]);
-            alf[4]++ ;
+            prt(letters[4]);
+            letters[4]++ ;
             count[4]++ ;
           }
           else {
-            if (alf[4] != 79) {
-                prt(alf[4]);
-                alf[4]++;
+            if (letters[4] != 79) {
+                prt(letters[4]);
+                letters[4]++;
             }
             else {
-                prt(alf[4]);
+                prt(letters[4]);
                 count[4] = 2212;
             }
           }
-          if(alf[4] == 90) {
-            alf[4] = 'A' ;
+          if(letters[4] == 90) {
+            letters[4] = 'A' ;
           }
         }
 
@@ -132,110 +135,110 @@ public class temp {
         // alphabet 'W'
         if (count[4] == 2212) {
           if(count[5] < 2005) {
-            prt(alf[5]);
-            alf[5]++ ;
+            prt(letters[5]);
+            letters[5]++ ;
             count[5]++ ;
           }
           else {
-            if (alf[5] != 87) {
-                prt(alf[5]);
-                alf[5]++;
+            if (letters[5] != 87) {
+                prt(letters[5]);
+                letters[5]++;
             }
             else {
-                prt(alf[5]);
+                prt(letters[5]);
                 count[5] = 2212;
             }
           }
-          if(alf[5] == 90) {
-            alf[5] = 'A' ;
+          if(letters[5] == 90) {
+            letters[5] = 'A' ;
           }
         }
 
         // alphabet 'O'
         if (count[5] == 2212) {
           if(count[6] < 2005) {
-            prt(alf[6]);
-            alf[6]++ ;
+            prt(letters[6]);
+            letters[6]++ ;
             count[6]++ ;
           }
           else {
-            if (alf[6] != 79) {
-                prt(alf[6]);
-                alf[6]++;
+            if (letters[6] != 79) {
+                prt(letters[6]);
+                letters[6]++;
             }
             else {
-                prt(alf[6]);
+                prt(letters[6]);
                 count[6] = 2212;
             }
           }
-          if(alf[6] == 90) {
-            alf[6] = 'A' ;
+          if(letters[6] == 90) {
+            letters[6] = 'A' ;
           }
         }
 
         // alphabet 'R'
         if (count[6] == 2212) {
           if(count[7] < 2005) {
-            prt(alf[7]);
-            alf[7]++ ;
+            prt(letters[7]);
+            letters[7]++ ;
             count[7]++ ;
           }
           else {
-            if (alf[7] != 82) {
-                prt(alf[7]);
-                alf[7]++;
+            if (letters[7] != 82) {
+                prt(letters[7]);
+                letters[7]++;
             }
             else {
-                prt(alf[7]);
+                prt(letters[7]);
                 count[7] = 2212;
             }
           }
-          if(alf[7] == 90) {
-            alf[7] = 'A' ;
+          if(letters[7] == 90) {
+            letters[7] = 'A' ;
           }
         }
 
         // alphabet 'L'
         if (count[7] == 2212) {
           if(count[8] < 2005) {
-            prt(alf[8]);
-            alf[8]++ ;
+            prt(letters[8]);
+            letters[8]++ ;
             count[8]++ ;
           }
           else {
-            if (alf[8] != 76) {
-                prt(alf[8]);
-                alf[8]++;
+            if (letters[8] != 76) {
+                prt(letters[8]);
+                letters[8]++;
             }
             else {
-                prt(alf[8]);
+                prt(letters[8]);
                 count[8] = 2212;
             }
           }
-          if(alf[8] == 90) {
-            alf[8] = 'A' ;
+          if(letters[8] == 90) {
+            letters[8] = 'A' ;
           }
         }
 
         // alphabet 'D'
         if (count[8] == 2212) {
           if(count[9] < 2005) {
-            prt(alf[9]);
-            alf[9]++ ;
+            prt(letters[9]);
+            letters[9]++ ;
             count[9]++ ;
           }
           else {
-            if (alf[9] != 68) {
-                prt(alf[9]);
-                alf[9]++;
+            if (letters[9] != 68) {
+                prt(letters[9]);
+                letters[9]++;
             }
             else {
-                prt(alf[9]);
+                prt(letters[9]);
                 count[9] = 2212;
             }
           }
-          if(alf[9] == 90) {
-            alf[9] = 'A' ;
+          if(letters[9] == 90) {
+            letters[9] = 'A' ;
           }
         }
 
