@@ -1,4 +1,4 @@
-public class temp {
+public class HW {
 
   public static void prt(char a) {
     System.out.print(a);

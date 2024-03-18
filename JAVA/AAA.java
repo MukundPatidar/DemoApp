@@ -1,7 +1,7 @@
-public class sc {
+public class AAA {
     public static void main(String[] args) {
-        char a = 'Z';
-        int b = a;
+        String a = "1001";
+        int b = a.charAt(3);
         System.out.println(b);
     }
 }
