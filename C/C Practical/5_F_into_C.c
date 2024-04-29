@@ -7,7 +7,7 @@ int main ()
     printf("Enter fahrenheit : ");
     scanf("%f", &F);
 
-   C = (F-32) * 5/9;
+    C = (F-32) * 5/9;
 
     printf("%g'F = %.2f'C", F,C);
 
