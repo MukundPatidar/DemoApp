@@ -154,7 +154,7 @@ void view() {
     gotoxy(10,5);
     printf("S.No   Name of Student       Mobile No   Roll No  Course      Branch");
     gotoxy(10,6);
-    printf("--------------------------------------------------------------------");
+    printf("----------------------------------------------------------------------------------");
     fp = fopen("record.txt","rb+");
     
     if(fp == NULL){
