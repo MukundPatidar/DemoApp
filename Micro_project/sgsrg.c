@@ -82,7 +82,11 @@ void add() {
     struct student std;
     char another ='y';
     system("cls");
+<<<<<<< HEAD
     fp = fopen("record1.txt","ab+");
+=======
+    fp = fopen("record.txt","ab+");
+>>>>>>> 6883ca97c3ba531cd2457e5d80ac54ef5202f8ff
     if(fp == NULL){
         gotoxy(10,5);
         printf("Error opening file");
@@ -140,7 +144,11 @@ void view() {
     printf("S.No   Name of item       Amount   ");
     gotoxy(10,6);
     printf("----------------------------------------------------------------------------------");
+<<<<<<< HEAD
     fp = fopen("record1.txt","rb+");
+=======
+    fp = fopen("record.txt","rb+");
+>>>>>>> 6883ca97c3ba531cd2457e5d80ac54ef5202f8ff
     
     if(fp == NULL){
         gotoxy(10,8);
@@ -174,7 +182,11 @@ void search() {
     printf("Enter name of student : ");
     fflush(stdin);
     gets(stname);
+<<<<<<< HEAD
     fp = fopen("record1.txt","rb+");
+=======
+    fp = fopen("record.txt","rb+");
+>>>>>>> 6883ca97c3ba531cd2457e5d80ac54ef5202f8ff
 
     if(fp == NULL){
         gotoxy(10,6);
@@ -216,7 +228,11 @@ void modify() {
     printf("Enter name of student to modify: ");
     fflush(stdin);
     gets(stname);
+<<<<<<< HEAD
     fp = fopen("record1.txt","rb+");
+=======
+    fp = fopen("record.txt","rb+");
+>>>>>>> 6883ca97c3ba531cd2457e5d80ac54ef5202f8ff
 
     if(fp == NULL) {
         gotoxy(10,6);
@@ -271,7 +287,11 @@ void deleterec() {
     printf("Enter name of student to delete record : ");
     fflush(stdin);
     gets(stname);
+<<<<<<< HEAD
     fp = fopen("record1.txt","rb+");
+=======
+    fp = fopen("record.txt","rb+");
+>>>>>>> 6883ca97c3ba531cd2457e5d80ac54ef5202f8ff
 
     if(fp == NULL) {
         gotoxy(10,6);
@@ -279,7 +299,11 @@ void deleterec() {
         exit(1);
     }
 
+<<<<<<< HEAD
     ft = fopen("temp1.txt","wb+");
+=======
+    ft = fopen("temp.txt","wb+");
+>>>>>>> 6883ca97c3ba531cd2457e5d80ac54ef5202f8ff
 
     if(ft == NULL){
         gotoxy(10,6);
@@ -296,8 +320,13 @@ void deleterec() {
 
     fclose(fp);
     fclose(ft);
+<<<<<<< HEAD
     remove("record1.txt");
     rename("temp1.txt","record1.txt");
+=======
+    remove("record.txt");
+    rename("temp.txt","record.txt");
+>>>>>>> 6883ca97c3ba531cd2457e5d80ac54ef5202f8ff
     gotoxy(10,10);
     printf("Press any key to continue.");
     getch();
