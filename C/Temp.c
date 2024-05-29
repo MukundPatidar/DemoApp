@@ -1,28 +1,49 @@
-#include<stdio.h>
-#include<stdlib.h>
-
-int main(){
-    int n,i,*ptr,sum=0;
-
-    printf("Enter number of elements: ");
-    scanf("%d",&n);
-
-    ptr=(int*)malloc(n*sizeof(int)); //memory allocated using malloc
-
-    if(ptr==NULL) {
-        printf("Sorry! unable to allocate memory");
-        exit(0);
-    }
-
-    printf("Enter elements of array: \n");
-    
-    for(i=0;i<n;++i){
-        scanf("%d",ptr+i);
-        sum+=*(ptr+i);
-    }
-
-    printf("Sum=%d",sum);
-    free(ptr);
-
+#include <stdio.h>
+void push ();
+void pop();
+void display();
+int maxsize = 6;
+int top = 1;
+int main() {
+    int stack[maxsize];
+    push();
+    push();
+    push();
+    push();
+    push();
+    push();
+    display();
+    pop();
+    pop();
+    pop();
+    display();
+    pop();
+    pop();
+    pop();
     return 0;
-} 
+}
+void push(){
+    int item;
+    printf("Enter element you want to push : ");
+    scanf("%d",&item);
+    if(top == maxsize - 1){
+        printf("Stack overflow");
+        return;
+    }
+    top++;
+    stack[top] = item;
+}
+void pop(){
+    if(top == -1){
+        printf("Stack overflow");
+        return 0;
+    }
+    top--;
+}
+void display(){
+    int i;
+    printf("Element of stack are :\n");
+    for(i = top; i > 0; i--){
+        printf("%d\n",stack[i]);
+    }
+}
