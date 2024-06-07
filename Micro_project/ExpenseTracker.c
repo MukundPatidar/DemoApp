@@ -10,6 +10,7 @@ void addEx();
 void addIn();
 void view_ex();
 void view_in();
+void balance();
 void search();
 void modify();
 void delete();
@@ -25,7 +26,7 @@ struct tracker {
 int main() {
     system("cls");
     gotoxy(15,8);
-    printf("<--:Student Record Management System:-->");
+    printf("<--:Expense Tracker:-->");
     gotoxy(19,15);
     printf("Press any key to continue.");
     getch();
@@ -49,14 +50,16 @@ void menu() {
     gotoxy(10,10);
     printf("4 : View Income.");
     gotoxy(10,11);
-    printf("5 : Search Record.");
+    printf("5 : View Balance.");
     gotoxy(10,12);
-    printf("6 : Modify Record.");
+    printf("6 : Search Record.");
     gotoxy(10,13);
-    printf("7 : Delete.");
+    printf("7 : Modify Record.");
     gotoxy(10,14);
-    printf("8 : Exit.");
-    gotoxy(10,17);
+    printf("8 : Delete.");
+    gotoxy(10,15);
+    printf("9 : Exit.");
+    gotoxy(10,18);
     printf("Enter your choice.");
     scanf("%d",&choice);
     switch(choice) {
@@ -73,15 +76,18 @@ void menu() {
             view_in();
             break;
         case 5:
-            search();
+            balance();
             break;
         case 6:
-            modify();
+            search();
             break;
         case 7:
-            delete();
+            modify();
             break;
         case 8:
+            delete(1);
+            break;
+        case 9:
             exit(1);
             break;
         default:
@@ -93,7 +99,7 @@ void menu() {
 void addEx() {
     FILE *fp;
     struct tracker std;
-     char another ='y';
+    char another ='y';
     system("cls");
 
     fp = fopen("Tracker.txt","ab+");
@@ -268,6 +274,58 @@ void view_in() {
     menu();
 }
 
+void balance() {
+    FILE *fp;
+    struct tracker std;
+    system("cls");
+
+    fp = fopen("Tracker.txt","rb+");
+    if(fp == NULL){
+        gotoxy(10,8);
+        printf("Error opening file.");
+        exit(1);
+    }
+
+    int ex_total = 0;
+    int in_total = 0;
+    int balance = 0;
+    char str[] = "Income";
+
+    while(fread(&std,sizeof(std),1,fp) == 1) {
+        if(strcmp(str, std.type) != 0) {
+            ex_total += std.ex_amount;
+            // gotoxy(10,j);
+            // printf("%d\t%s\t\t%d\t%d\t\t%s",i,std.category,std.ex_amount,ex_total,std.remark);
+            // i++;
+            // j++;
+        }
+    }
+
+    // while(fread(&std,sizeof(std),1,fp) == 1) {
+    //     if(strcmp(str,std.type) != 0) {
+    //         // ex_total += std.ex_amount;
+    //         printf("\n Ex: %d",&std.ex_amount);
+    //     } 
+    //     if(strcmp(str,std.type) == 0) {
+    //         // in_total += std.in_amount;
+    //         printf("\n in: %d",&std.in_amount);
+    //     } 
+    // }
+
+    // balance += in_total;
+    // balance -= ex_total;
+
+    gotoxy(10,5);
+    printf("\nBalance = %d",&balance);
+    printf("\ntotal income = %d",&in_total);
+    printf("\n total expense = %d",&ex_total);
+    gotoxy(10,8);
+    printf("\npress any key to continue: ");
+    getch();
+    menu();
+
+}
+
 void search() {
 
 }
@@ -279,7 +337,6 @@ void modify() {
 void delete() {
 
 }
-
 
 void gotoxy(int x,int y) {
         COORD c;
