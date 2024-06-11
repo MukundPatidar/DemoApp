@@ -382,7 +382,51 @@ void search() {
 }
 
 void modify() {
+    int id;
+    FILE *fp;
+    struct tracker std;
+    system("cls");
+    gotoxy(10,3);
+    printf("<--:MODIFY RECORD:-->");
+    gotoxy(10,5);
+    printf("Enter ID : ");
+    scanf("%d",&id);
+    fflush(stdin);
+    fp = fopen("Tracker.txt","rb+");
 
+    if(fp == NULL) {
+        gotoxy(10,6);
+        printf("Error opening file");
+        exit(1);
+    }
+
+    rewind(fp);
+    fflush(stdin);
+
+    while(fread(&std,sizeof(std),1,fp) == 1) {
+
+        if(id == std.id) {
+            gotoxy(10,7);
+            printf("Enter category : ");
+            gets(std.category);
+            gotoxy(10,8);
+            printf("Enter Remark : ");
+            gets(std.remark);
+            fflush(stdin);
+            gotoxy(10,9);
+            printf("Enter Amount : ");
+            scanf("%d",&std.ex_amount);
+            fseek(fp ,-sizeof(std),SEEK_CUR);
+            fwrite(&std,sizeof(std),1,fp);
+            break;
+        }
+    }
+
+    fclose(fp);
+    gotoxy(10,16);
+    printf("Press any key to continue.");
+    getch();
+    menu();
 }
 
 void delete() {
