@@ -21,12 +21,13 @@ struct tracker {
     char category[20];
     int ex_amount;
     int in_amount;
-    // int ID;
+    int id;
 };
+int count = 101;
 
 int main() {
     // struct tracker std;
-    // std.ID = 001;
+    // std.id = 001;
     system("cls");
     gotoxy(15,8);
     printf("<--:Expense Tracker:-->");
@@ -133,6 +134,8 @@ void addEx() {
         printf("Enter Amount : ");
         scanf("%d",&std.ex_amount);
         fflush(stdin);
+        std.id = count;
+        count++;
         fwrite(&std,sizeof(std),1,fp);
         gotoxy(10,15);
         printf("Want to add of another record? Then press 'y' else 'n'.");
@@ -182,6 +185,8 @@ void addIn() {
         printf("Enter Amount : ");
         scanf("%d",&std.in_amount);
         fflush(stdin);
+        std.id = count;
+        count++;
         fwrite(&std,sizeof(std),1,fp);
         gotoxy(10,15);
         printf("Want to add of another record? Then press 'y' else 'n'.");
@@ -206,7 +211,7 @@ void view_ex() {
     gotoxy(10,3);
     printf("<--:VIEW EXPENSE:-->");
     gotoxy(10,5);
-    printf("S.No\tCategory\tAmount\tTotal-Expense\tRemark");
+    printf("S.No\tID\tCategory\tAmount\tTotal-Expense\tRemark");
     gotoxy(10,6);
     printf("------------------------------------------------------------");
 
@@ -225,7 +230,7 @@ void view_ex() {
         if(strcmp(str, std.type) != 0) {
             ex_total += std.ex_amount;
             gotoxy(10,j);
-            printf("%d\t%s\t\t%d\t%d\t\t%s",i,std.category,std.ex_amount,ex_total,std.remark);
+            printf("%d\t%d\t%s\t\t%d\t%d\t\t%s",i,std.id,std.category,std.ex_amount,ex_total,std.remark);
             i++;
             j++;
         }
@@ -246,7 +251,7 @@ void view_in() {
     gotoxy(10,3);
     printf("<--:VIEW INCOME:-->");
     gotoxy(10,5);
-    printf("S.No\tCategory\tAmount\tTotal-Income\tRemark");
+    printf("S.No\tID\tCategory\tAmount\tTotal-Income\tRemark");
     gotoxy(10,6);
     printf("------------------------------------------------------------");
 
@@ -265,7 +270,7 @@ void view_in() {
         if(strcmp(str, std.type) == 0) {
             in_total += std.in_amount;
             gotoxy(10,j);
-            printf("%d\t%s\t\t%d\t%d\t\t%s",i,std.category,std.in_amount,in_total,std.remark);
+            printf("%d\t%d\t%s\t\t%d\t%d\t\t%s",i,std.id,std.category,std.in_amount,in_total,std.remark);
             i++;
             j++;
         }
@@ -343,7 +348,7 @@ void search() {
     }
 
     gotoxy(10,8);
-    printf("S.No\tType\tCategory\tAmount\tRemark");
+    printf("S.No\tID\tType\tCategory\tAmount\tRemark");
     gotoxy(10,9);
     printf("------------------------------------------------------------");
     j = 10;
@@ -352,20 +357,21 @@ void search() {
         if(strcmp(category,std.category) == 0) {
             if(strcmp(str, std.type) != 0) {
                 gotoxy(10,j);
-                printf("%d\t%s\t%s\t\t%d\t%s",i,std.type,std.category,std.ex_amount,std.remark);
+                printf("%d\t%d\t%s\t%s\t\t%d\t%s",i,std.id,std.type,std.category,std.ex_amount,std.remark);
                 i++;
                 j++;
             } else {
                 gotoxy(10,j);
-                printf("%d\t%s\t%s\t\t%d\t%s",i,std.type,std.category,std.in_amount,std.remark);
+                printf("%d\t%d\t%s\t%s\t\t%d\t%s",i,std.id,std.type,std.category,std.in_amount,std.remark);
                 i++;
                 j++;
                 
             }
-        } else {
-            gotoxy(15,j+1);
-            printf("No Data Found.");
         }
+    }
+    if(j<=10) {
+        gotoxy(15,j+1);
+        printf("No Data Found.");
     }
 
     fclose(fp);
