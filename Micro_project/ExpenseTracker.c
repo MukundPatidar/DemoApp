@@ -115,6 +115,7 @@ void addEx() {
     while(another == 'y') {
         strcpy(std.type, "Expense");
         gotoxy(10,3);
+        fflush(stdin);
         printf("<--:ADD Expense:-->");
         gotoxy(10,5);
         printf("Enter details of Expense.");
@@ -279,7 +280,10 @@ void balance() {
     struct tracker std;
     system("cls");
 
-    fp = fopen("Tracker.txt","rb+");
+    gotoxy(10,3);
+    printf("<--:VIEW BALANCE:-->");
+
+    fp = fopen("Tracker.txt","r");
     if(fp == NULL){
         gotoxy(10,8);
         printf("Error opening file.");
@@ -294,32 +298,20 @@ void balance() {
     while(fread(&std,sizeof(std),1,fp) == 1) {
         if(strcmp(str, std.type) != 0) {
             ex_total += std.ex_amount;
-            // gotoxy(10,j);
-            // printf("%d\t%s\t\t%d\t%d\t\t%s",i,std.category,std.ex_amount,ex_total,std.remark);
-            // i++;
-            // j++;
+        } else {
+            in_total += std.in_amount;
         }
     }
-
-    // while(fread(&std,sizeof(std),1,fp) == 1) {
-    //     if(strcmp(str,std.type) != 0) {
-    //         // ex_total += std.ex_amount;
-    //         printf("\n Ex: %d",&std.ex_amount);
-    //     } 
-    //     if(strcmp(str,std.type) == 0) {
-    //         // in_total += std.in_amount;
-    //         printf("\n in: %d",&std.in_amount);
-    //     } 
-    // }
-
-    // balance += in_total;
-    // balance -= ex_total;
+    balance += in_total - ex_total;
 
     gotoxy(10,5);
-    printf("\nBalance = %d",&balance);
-    printf("\ntotal income = %d",&in_total);
-    printf("\n total expense = %d",&ex_total);
-    gotoxy(10,8);
+    printf("Balance = %d",balance);
+    gotoxy(10,6);
+    printf("total income = %d",in_total);
+    gotoxy(10,7);
+    printf("total expense = %d",ex_total);
+    
+    gotoxy(10,10);
     printf("\npress any key to continue: ");
     getch();
     menu();
