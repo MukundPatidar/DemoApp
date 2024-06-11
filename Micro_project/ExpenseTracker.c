@@ -146,9 +146,9 @@ void addEx() {
     }
 
     fclose(fp);
-    gotoxy(10,18);
-    printf("Press any key to continue.");
-    getch();
+    // gotoxy(10,18);
+    // printf("Press any key to continue.");
+    // getch();
     menu();
 }
 
@@ -197,9 +197,9 @@ void addIn() {
     }
 
     fclose(fp);
-    gotoxy(10,18);
-    printf("Press any key to continue.");
-    getch();
+    // gotoxy(10,18);
+    // printf("Press any key to continue.");
+    // getch();
     menu();
 }
 
