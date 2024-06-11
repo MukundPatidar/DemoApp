@@ -21,9 +21,12 @@ struct tracker {
     char category[20];
     int ex_amount;
     int in_amount;
+    // int ID;
 };
 
 int main() {
+    // struct tracker std;
+    // std.ID = 001;
     system("cls");
     gotoxy(15,8);
     printf("<--:Expense Tracker:-->");
@@ -307,19 +310,69 @@ void balance() {
     gotoxy(10,5);
     printf("Balance = %d",balance);
     gotoxy(10,6);
-    printf("total income = %d",in_total);
+    printf("Total Income = %d",in_total);
     gotoxy(10,7);
-    printf("total expense = %d",ex_total);
+    printf("Total Expense = %d",ex_total);
     
     gotoxy(10,10);
-    printf("\npress any key to continue: ");
+    printf("Press any key to continue: ");
     getch();
     menu();
 
 }
 
 void search() {
+    FILE *fp;
+    struct tracker std;
+    char category[20];
+    int i=1,j;
+    char str[] = "Income";
+    system("cls");
+    gotoxy(10,3);
+    printf("<--:SEARCH RECORD:-->");
+    gotoxy(10,5);
+    printf("Enter category : ");
+    fflush(stdin);
+    gets(category);
+    fp = fopen("Tracker.txt","r");
 
+    if(fp == NULL){
+        gotoxy(10,6);
+        printf("Error opening file");
+        exit(1);
+    }
+
+    gotoxy(10,8);
+    printf("S.No\tType\tCategory\tAmount\tRemark");
+    gotoxy(10,9);
+    printf("------------------------------------------------------------");
+    j = 10;
+    while(fread(&std,sizeof(std),1,fp ) == 1) {
+
+        if(strcmp(category,std.category) == 0) {
+            if(strcmp(str, std.type) != 0) {
+                gotoxy(10,j);
+                printf("%d\t%s\t%s\t\t%d\t%s",i,std.type,std.category,std.ex_amount,std.remark);
+                i++;
+                j++;
+            } else {
+                gotoxy(10,j);
+                printf("%d\t%s\t%s\t\t%d\t%s",i,std.type,std.category,std.in_amount,std.remark);
+                i++;
+                j++;
+                
+            }
+        } else {
+            gotoxy(15,j+1);
+            printf("No Data Found.");
+        }
+    }
+
+    fclose(fp);
+    gotoxy(10,j+4);
+    printf("Press any key to continue.");
+    getch();
+    menu();
 }
 
 void modify() {
