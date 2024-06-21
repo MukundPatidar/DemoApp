@@ -389,7 +389,7 @@ void modify() {
     gotoxy(10,3);
     printf("<--:MODIFY RECORD:-->");
     gotoxy(10,5);
-    printf("Enter ID : ");
+    printf("Enter ID of transection to modify record : ");
     scanf("%d",&id);
     fflush(stdin);
     fp = fopen("Tracker.txt","rb+");
@@ -430,7 +430,49 @@ void modify() {
 }
 
 void delete() {
+    int id;
+    FILE *fp,*ft;
+    struct tracker std;
+    system("cls");
+    gotoxy(10,3);
+    printf("<--:DELETE RECORD:-->");
+    gotoxy(10,5);
 
+    
+    printf("Enter ID of transection to delete record : ");
+    fflush(stdin);
+    scanf("%d",&id);
+    fp = fopen("Tracker.txt","rb+");
+
+    if(fp == NULL) {
+        gotoxy(10,6);
+        printf("Error opening file");
+        exit(1);
+    }
+
+    ft = fopen("temp.txt","wb+");
+
+    if(ft == NULL){
+        gotoxy(10,6);
+        printf("Error opening file");
+        exit(1);
+    }
+
+    while(fread(&std,sizeof(std),1,fp) == 1) {
+
+        if(id != std.id) {
+            fwrite(&std,sizeof(std),1,ft);
+        }
+    }
+
+    fclose(fp);
+    fclose(ft);
+    remove("Tracker.txt");
+    rename("temp.txt","Tracker.txt");
+    gotoxy(10,10);
+    printf("Press any key to continue.");
+    getch();
+    menu();
 }
 
 void gotoxy(int x,int y) {
