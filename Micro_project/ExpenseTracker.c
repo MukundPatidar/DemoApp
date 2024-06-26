@@ -23,11 +23,25 @@ struct tracker {
     int in_amount;
     int id;
 };
-int count = 101;
+int count;
 
 int main() {
-    // struct tracker std;
-    // std.id = 001;
+    struct tracker std;
+    FILE *fp = fopen("Tracker.txt","rb+");
+    if(fp == NULL){
+        fp = fopen("Tracker.txt","w");
+        if(fp == NULL){
+            printf("Error in opening file");
+            exit(1);
+        }
+        count = 148;
+        fclose(fp);
+    } else {
+        while(fread(&std,sizeof(std),1,fp) == 1) {
+            count = std.id;
+            fclose(fp); 
+        }
+    }
     system("cls");
     gotoxy(15,8);
     printf("<--:Expense Tracker:-->");
@@ -134,8 +148,8 @@ void addEx() {
         printf("Enter Amount : ");
         scanf("%d",&std.ex_amount);
         fflush(stdin);
-        std.id = count;
         count++;
+        std.id = count;
         fwrite(&std,sizeof(std),1,fp);
         gotoxy(10,15);
         printf("Want to add of another record? Then press 'y' else 'n'.");
@@ -185,8 +199,8 @@ void addIn() {
         printf("Enter Amount : ");
         scanf("%d",&std.in_amount);
         fflush(stdin);
-        std.id = count;
         count++;
+        std.id = count;
         fwrite(&std,sizeof(std),1,fp);
         gotoxy(10,15);
         printf("Want to add of another record? Then press 'y' else 'n'.");
