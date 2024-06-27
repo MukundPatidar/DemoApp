@@ -34,14 +34,13 @@ int main() {
             printf("Error in opening file");
             exit(1);
         }
-        count = 148;
-        fclose(fp);
+        count = 1480;
     } else {
         while(fread(&std,sizeof(std),1,fp) == 1) {
-            count = std.id;
-            fclose(fp); 
+            count = std.id; 
         }
     }
+    fclose(fp);
     system("cls");
     gotoxy(15,8);
     printf("<--:Expense Tracker:-->");
