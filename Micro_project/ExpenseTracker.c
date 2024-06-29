@@ -34,12 +34,9 @@ int main() {
             printf("Error in opening file");
             exit(1);
         }
-<<<<<<< HEAD
         count = 101;
         fclose(fp);
-=======
         count = 1480;
->>>>>>> 5dca60803cc5d501cdc239da77b77158f0fcc896
     } else {
         while(fread(&std,sizeof(std),1,fp) == 1) {
             count = std.id; 
