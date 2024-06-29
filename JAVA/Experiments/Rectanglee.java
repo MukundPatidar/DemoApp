@@ -1,16 +1,16 @@
 package Experiments;
 
-public class Rectangle {
+public class Rectanglee {
 
     private int width;
     private int height;
 
-    public Rectangle() {
+    public Rectanglee() {
         width = 0;
         height = 0;
     }
 
-    public Rectangle(int width, int height) {
+    public Rectanglee(int width, int height) {
         this.width = width;
         this.height = height;
     }
@@ -21,8 +21,8 @@ public class Rectangle {
 
     public static void main(String[] args) {
 
-        Rectangle rect1 = new Rectangle();
-        Rectangle rect2 = new Rectangle(5, 10);
+        Rectanglee rect1 = new Rectanglee();
+        Rectanglee rect2 = new Rectanglee(5, 10);
 
         System.out.println("Rectangle 1 dimensions:");
         rect1.displayDimensions();

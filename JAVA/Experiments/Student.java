@@ -1,21 +1,21 @@
 package Experiments;
 
-public class Student {
-    private String name;
-    private int age;
+// Student.java
+public class Student extends Person {
+    private int studentId;
     
-    public Student(String name, int age) {
-        this.name = name;
-        this.age = age;
+    public Student(String name, int age, int studentId) {
+        super(name, age); 
+        this.studentId = studentId;
     }
     
-    public static void displayStudentInfo(Student student) {
-        System.out.println("Student Name: " + student.name);
-        System.out.println("Student Age: " + student.age);
+    public void displayStudentDetails() {
+        super.displayDetails(); 
+        System.out.println("Student ID: " + studentId);
     }
     
     public static void main(String[] args) {
-        Student student1 = new Student("Mukund", 18);
-        displayStudentInfo(student1);
+        Student student = new Student("Mukund Patidar", 18, 26988);
+        student.displayStudentDetails();
     }
 }
