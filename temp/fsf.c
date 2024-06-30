@@ -1,8 +1,8 @@
-#include<stdio.h>
-#include<conio.h>
-#include<stdlib.h>
-#include<windows.h>
-#include<string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <windows.h>
+#include <string.h>
 
 void gotoxy(int ,int );
 void menu();
@@ -13,7 +13,7 @@ void view_in();
 void balance();
 void search();
 void modify();
-void delete();
+void delete_record();
 
 struct tracker {
     char type[10];
@@ -23,24 +23,23 @@ struct tracker {
     int in_amount;
     int id;
 };
+
 int count;
 
 int main() {
     struct tracker std;
-    FILE *fp = fopen("Tracker.txt","rb+");
-    if(fp == NULL){
-        fp = fopen("Tracker.txt","w");
-        if(fp == NULL){
-            printf("Error in opening file");
-            exit(1);
-        }
-        count = 1480;
-        fclose(fp);
-    } else {
-        while(fread(&std,sizeof(std),1,fp) == 1) {
-            count = std.id; 
-        }
+    FILE *fp = fopen("Tracker.csv", "a+"); // Open CSV file in append mode
+    if(fp == NULL) {
+        printf("Error in opening file");
+        exit(1);
     }
+
+    // Calculate count based on existing entries in CSV (if any)
+    count = 0;
+    while(fscanf(fp, "%*[^,],%*[^,],%*[^,],%*d,%*d,%d\n", &std.id) == 1) {
+        count++;
+    }
+
     fclose(fp);
     system("cls");
     gotoxy(15,8);
@@ -78,7 +77,7 @@ void menu() {
     gotoxy(10,15);
     printf("9 : Exit.");
     gotoxy(10,18);
-    printf("Enter your choice.");
+    printf("Enter your choice: ");
     scanf("%d",&choice);
     switch(choice) {
         case 1:
@@ -103,7 +102,7 @@ void menu() {
             modify();
             break;
         case 8:
-            delete(1);
+            delete_record();
             break;
         case 9:
             exit(1);
@@ -120,14 +119,14 @@ void addEx() {
     char another ='y';
     system("cls");
 
-    fp = fopen("Tracker.txt","ab+");
+    fp = fopen("Tracker.csv","a+"); // Open CSV file in append mode
 
     if(fp == NULL){
         gotoxy(10,5);
         printf("Error opening file");
         exit(1);
     }
-    
+
     fflush(stdin);
 
     while(another == 'y') {
@@ -150,9 +149,12 @@ void addEx() {
         fflush(stdin);
         count++;
         std.id = count;
-        fwrite(&std,sizeof(std),1,fp);
+        
+        // Write to CSV in comma-separated format
+        fprintf(fp, "%s,%s,%s,%d,%d,%d\n", std.type, std.remark, std.category, std.ex_amount, std.in_amount, std.id);
+        
         gotoxy(10,15);
-        printf("Want to add of another record? Then press 'y' else 'n'.");
+        printf("Want to add another record? Press 'y' else 'n'.");
         fflush(stdin);
         another = getch();
         system("cls");
@@ -166,31 +168,31 @@ void addEx() {
 void addIn() {
     FILE *fp;
     struct tracker std;
-     char another ='y';
+    char another ='y';
     system("cls");
 
-    fp = fopen("Tracker.txt","ab+");
+    fp = fopen("Tracker.csv","a+"); // Open CSV file in append mode
 
     if(fp == NULL){
         gotoxy(10,5);
         printf("Error opening file");
         exit(1);
     }
-    
+
     fflush(stdin);
 
     while(another == 'y') {
+        strcpy(std.type, "Income");
         gotoxy(10,3);
+        fflush(stdin);
         printf("<--:ADD INCOME:-->");
         gotoxy(10,5);
         printf("Enter details of Income.");
-        strcpy(std.type, "Income");
         gotoxy(10,7);
         printf("Enter category : ");
         gets(std.category);
         gotoxy(10,8);
         printf("Enter Remark : ");
-        fflush(stdin);
         gets(std.remark);
         gotoxy(10,9);
         printf("Enter Amount : ");
@@ -198,9 +200,12 @@ void addIn() {
         fflush(stdin);
         count++;
         std.id = count;
-        fwrite(&std,sizeof(std),1,fp);
+        
+        // Write to CSV in comma-separated format
+        fprintf(fp, "%s,%s,%s,%d,%d,%d\n", std.type, std.remark, std.category, std.ex_amount, std.in_amount, std.id);
+        
         gotoxy(10,15);
-        printf("Want to add of another record? Then press 'y' else 'n'.");
+        printf("Want to add another record? Press 'y' else 'n'.");
         fflush(stdin);
         another = getch();
         system("cls");
@@ -213,7 +218,6 @@ void addIn() {
 
 void view_ex() {
     FILE *fp;
-    int i=1,j;
     struct tracker std;
     system("cls");
     gotoxy(10,3);
@@ -223,29 +227,29 @@ void view_ex() {
     gotoxy(10,6);
     printf("------------------------------------------------------------");
 
-    fp = fopen("Tracker.txt","rb+");
+    fp = fopen("Tracker.csv","r");
+
     if(fp == NULL){
         gotoxy(10,8);
         printf("Error opening file.");
         exit(1);
     }
 
-    j=8;
+    int i = 1;
     int ex_total = 0;
     char str[] = "Income";
 
-    while(fread(&std,sizeof(std),1,fp) == 1) {
+    while(fscanf(fp, "%[^,],%[^,],%[^,],%d,%d,%d\n", std.type, std.remark, std.category, &std.ex_amount, &std.in_amount, &std.id) == 6) {
         if(strcmp(str, std.type) != 0) {
             ex_total += std.ex_amount;
-            gotoxy(10,j);
-            printf("%d\t%d\t%s\t\t%d\t%d\t\t%s",i,std.id,std.category,std.ex_amount,ex_total,std.remark);
+            gotoxy(10,8+i);
+            printf("%d\t%d\t%s\t\t%d\t%d\t\t%s", i, std.id, std.category, std.ex_amount, ex_total, std.remark);
             i++;
-            j++;
         }
     }
 
     fclose(fp);
-    gotoxy(10,j+3);
+    gotoxy(10,8+i);
     printf("Press any key to continue.");
     getch();
     menu();
@@ -253,7 +257,6 @@ void view_ex() {
 
 void view_in() {
     FILE *fp;
-    int i=1,j;
     struct tracker std;
     system("cls");
     gotoxy(10,3);
@@ -263,29 +266,29 @@ void view_in() {
     gotoxy(10,6);
     printf("------------------------------------------------------------");
 
-    fp = fopen("Tracker.txt","rb+");
+    fp = fopen("Tracker.csv","r");
+
     if(fp == NULL){
         gotoxy(10,8);
         printf("Error opening file.");
         exit(1);
     }
 
-    j=8;
+    int i = 1;
     int in_total = 0;
     char str[] = "Income";
 
-    while(fread(&std,sizeof(std),1,fp) == 1) {
+    while(fscanf(fp, "%[^,],%[^,],%[^,],%d,%d,%d\n", std.type, std.remark, std.category, &std.ex_amount, &std.in_amount, &std.id) == 6) {
         if(strcmp(str, std.type) == 0) {
             in_total += std.in_amount;
-            gotoxy(10,j);
-            printf("%d\t%d\t%s\t\t%d\t%d\t\t%s",i,std.id,std.category,std.in_amount,in_total,std.remark);
+            gotoxy(10,8+i);
+            printf("%d\t%d\t%s\t\t%d\t%d\t\t%s", i, std.id, std.category, std.in_amount, in_total, std.remark);
             i++;
-            j++;
         }
     }
 
     fclose(fp);
-    gotoxy(10,j+3);
+    gotoxy(10,8+i);
     printf("Press any key to continue.");
     getch();
     menu();
@@ -299,7 +302,8 @@ void balance() {
     gotoxy(10,3);
     printf("<--:VIEW BALANCE:-->");
 
-    fp = fopen("Tracker.txt","r");
+    fp = fopen("Tracker.csv","r");
+
     if(fp == NULL){
         gotoxy(10,8);
         printf("Error opening file.");
@@ -311,7 +315,7 @@ void balance() {
     int balance = 0;
     char str[] = "Income";
 
-    while(fread(&std,sizeof(std),1,fp) == 1) {
+    while(fscanf(fp, "%[^,],%[^,],%[^,],%d,%d,%d\n", std.type, std.remark, std.category, &std.ex_amount, &std.in_amount, &std.id) == 6) {
         if(strcmp(str, std.type) != 0) {
             ex_total += std.ex_amount;
         } else {
@@ -327,18 +331,18 @@ void balance() {
     gotoxy(10,7);
     printf("Total Expense = %d",ex_total);
     
+    fclose(fp);
     gotoxy(10,10);
     printf("Press any key to continue: ");
     getch();
     menu();
-
 }
 
 void search() {
     FILE *fp;
     struct tracker std;
     char category[20];
-    int i=1,j;
+    int i=1;
     char str[] = "Income";
     system("cls");
     gotoxy(10,3);
@@ -347,7 +351,7 @@ void search() {
     printf("Enter category : ");
     fflush(stdin);
     gets(category);
-    fp = fopen("Tracker.txt","r");
+    fp = fopen("Tracker.csv","r");
 
     if(fp == NULL){
         gotoxy(10,6);
@@ -359,31 +363,27 @@ void search() {
     printf("S.No\tID\tType\tCategory\tAmount\tRemark");
     gotoxy(10,9);
     printf("------------------------------------------------------------");
-    j = 10;
-    while(fread(&std,sizeof(std),1,fp ) == 1) {
 
+    while(fscanf(fp, "%[^,],%[^,],%[^,],%d,%d,%d\n", std.type, std.remark, std.category, &std.ex_amount, &std.in_amount, &std.id) == 6) {
         if(strcmp(category,std.category) == 0) {
             if(strcmp(str, std.type) != 0) {
-                gotoxy(10,j);
+                gotoxy(10,i+9);
                 printf("%d\t%d\t%s\t%s\t\t%d\t%s",i,std.id,std.type,std.category,std.ex_amount,std.remark);
                 i++;
-                j++;
             } else {
-                gotoxy(10,j);
+                gotoxy(10,i+9);
                 printf("%d\t%d\t%s\t%s\t\t%d\t%s",i,std.id,std.type,std.category,std.in_amount,std.remark);
                 i++;
-                j++;
-                
             }
         }
     }
-    if(j<=10) {
-        gotoxy(15,j+1);
+    if(i<=1) {
+        gotoxy(15,20);
         printf("No Data Found.");
     }
 
     fclose(fp);
-    gotoxy(10,j+4);
+    gotoxy(10,i+10);
     printf("Press any key to continue.");
     getch();
     menu();
@@ -397,10 +397,10 @@ void modify() {
     gotoxy(10,3);
     printf("<--:MODIFY RECORD:-->");
     gotoxy(10,5);
-    printf("Enter ID of transection to modify record : ");
+    printf("Enter ID of transaction to modify record : ");
     scanf("%d",&id);
     fflush(stdin);
-    fp = fopen("Tracker.txt","rb+");
+    fp = fopen("Tracker.csv","r+");
 
     if(fp == NULL) {
         gotoxy(10,6);
@@ -411,21 +411,22 @@ void modify() {
     rewind(fp);
     fflush(stdin);
 
-    while(fread(&std,sizeof(std),1,fp) == 1) {
+    while(fscanf(fp, "%[^,],%[^,],%[^,],%d,%d,%d\n", std.type, std.remark, std.category, &std.ex_amount, &std.in_amount, &std.id) == 6) {
 
         if(id == std.id) {
             gotoxy(10,7);
             printf("Enter category : ");
+            fflush(stdin);
             gets(std.category);
             gotoxy(10,8);
             printf("Enter Remark : ");
-            gets(std.remark);
             fflush(stdin);
+            gets(std.remark);
             gotoxy(10,9);
             printf("Enter Amount : ");
             scanf("%d",&std.ex_amount);
-            fseek(fp ,-sizeof(std),SEEK_CUR);
-            fwrite(&std,sizeof(std),1,fp);
+            fseek(fp, -sizeof(std), SEEK_CUR);
+            fprintf(fp, "%s,%s,%s,%d,%d,%d\n", std.type, std.remark, std.category, std.ex_amount, std.in_amount, std.id);
             break;
         }
     }
@@ -437,20 +438,19 @@ void modify() {
     menu();
 }
 
-void delete() {
+void delete_record() {
     int id;
-    FILE *fp,*ft;
+    FILE *fp, *ft;
     struct tracker std;
     system("cls");
     gotoxy(10,3);
     printf("<--:DELETE RECORD:-->");
     gotoxy(10,5);
 
-    
-    printf("Enter ID of transection to delete record : ");
+    printf("Enter ID of transaction to delete record : ");
     fflush(stdin);
     scanf("%d",&id);
-    fp = fopen("Tracker.txt","rb+");
+    fp = fopen("Tracker.csv","r");
 
     if(fp == NULL) {
         gotoxy(10,6);
@@ -458,7 +458,7 @@ void delete() {
         exit(1);
     }
 
-    ft = fopen("temp.txt","wb+");
+    ft = fopen("temp.csv","w");
 
     if(ft == NULL){
         gotoxy(10,6);
@@ -466,17 +466,17 @@ void delete() {
         exit(1);
     }
 
-    while(fread(&std,sizeof(std),1,fp) == 1) {
+    while(fscanf(fp, "%[^,],%[^,],%[^,],%d,%d,%d\n", std.type, std.remark, std.category, &std.ex_amount, &std.in_amount, &std.id) == 6) {
 
         if(id != std.id) {
-            fwrite(&std,sizeof(std),1,ft);
+            fprintf(ft, "%s,%s,%s,%d,%d,%d\n", std.type, std.remark, std.category, std.ex_amount, std.in_amount, std.id);
         }
     }
 
     fclose(fp);
     fclose(ft);
-    remove("Tracker.txt");
-    rename("temp.txt","Tracker.txt");
+    remove("Tracker.csv");
+    rename("temp.csv", "Tracker.csv");
     gotoxy(10,10);
     printf("Press any key to continue.");
     getch();
@@ -484,8 +484,8 @@ void delete() {
 }
 
 void gotoxy(int x,int y) {
-        COORD c;
-        c.X=x;
-        c.Y=y;
-        SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),c);
+    COORD c;
+    c.X=x;
+    c.Y=y;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),c);
 }
