@@ -130,7 +130,7 @@ void addEx() {
     
     fflush(stdin);
 
-    while(another == 'y') {
+    while(another == 'y' || another == 'Y') {
         strcpy(std.type, "Expense");
         gotoxy(10,3);
         fflush(stdin);
@@ -179,7 +179,7 @@ void addIn() {
     
     fflush(stdin);
 
-    while(another == 'y') {
+    while(another == 'y' || another == 'Y') {
         gotoxy(10,3);
         printf("<--:ADD INCOME:-->");
         gotoxy(10,5);
