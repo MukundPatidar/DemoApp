@@ -391,6 +391,7 @@ void search() {
 
 void modify() {
     int id;
+    boolean status = FALSE;
     FILE *fp;
     struct tracker std;
     system("cls");
@@ -426,12 +427,17 @@ void modify() {
             scanf("%d",&std.ex_amount);
             fseek(fp ,-sizeof(std),SEEK_CUR);
             fwrite(&std,sizeof(std),1,fp);
+            gotoxy(10,13);
+            printf("Record Modified Successfully.");
+            status = TRUE;
             break;
         }
     }
 
-    gotoxy(10,13);
-    printf("Record Modified Successfully.");
+    if(status == FALSE) {
+        gotoxy(10,13);
+        printf("Record Not Found/Invalid ID.");
+    }
     fclose(fp);
     gotoxy(10,16);
     printf("Press any key to continue.");
@@ -441,6 +447,7 @@ void modify() {
 
 void delete() {
     int id;
+    boolean status = FALSE;
     FILE *fp,*ft;
     struct tracker std;
     system("cls");
@@ -472,6 +479,8 @@ void delete() {
 
         if(id != std.id) {
             fwrite(&std,sizeof(std),1,ft);
+        } else{
+            status = TRUE;
         }
     }
 
@@ -479,8 +488,13 @@ void delete() {
     fclose(ft);
     remove("Tracker.txt");
     rename("temp.txt","Tracker.txt");
-    gotoxy(10,7);
-    printf("Record Deleted successfully.");
+    if(status == TRUE) {
+        gotoxy(10,7);
+        printf("Record Deleted successfully.");
+    } else {
+        gotoxy(10,7);
+        printf("Record Not Deleted/Invalid ID.");
+    }
     gotoxy(10,10);
     printf("Press any key to continue.");
     getch();
