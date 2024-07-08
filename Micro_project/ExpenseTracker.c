@@ -74,7 +74,7 @@ void menu() {
     gotoxy(10,13);
     printf("7 : Modify Record.");
     gotoxy(10,14);
-    printf("8 : Delete.");
+    printf("8 : Delete Record.");
     gotoxy(10,15);
     printf("9 : Exit.");
     gotoxy(10,18);
@@ -430,6 +430,8 @@ void modify() {
         }
     }
 
+    gotoxy(10,13);
+    printf("Record Modified Successfully.");
     fclose(fp);
     gotoxy(10,16);
     printf("Press any key to continue.");
@@ -477,6 +479,8 @@ void delete() {
     fclose(ft);
     remove("Tracker.txt");
     rename("temp.txt","Tracker.txt");
+    gotoxy(10,7);
+    printf("Record Deleted successfully.");
     gotoxy(10,10);
     printf("Press any key to continue.");
     getch();
