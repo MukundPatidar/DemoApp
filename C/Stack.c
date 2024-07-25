@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 #define SIZE 4
-int top = -1, inp_array[SIZE];
+int top = -1;
+int inp_array[SIZE];
 
 void push(int x) {
     if (top == SIZE - 1) {
@@ -33,9 +34,13 @@ void show() {
 }
 
 int main() {
-    push(55); push(38); push(46); push(22);
+    push(55); 
+    push(38); 
+    push(46); 
+    push(22);
     show();
-    pop(); pop();
+    pop(); 
+    pop();
     show();
     return 0;
 }
