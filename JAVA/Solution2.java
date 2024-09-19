@@ -2,7 +2,8 @@ class Solution2 {
     public static void solveSudoku(char[][] board) {
            int row=0, col=0;
 
-           while(row != 9){
+           while(row < 9){
+               System.out.println(row+col);
                 int nrow;
                 int ncol;
                 
@@ -32,6 +33,7 @@ class Solution2 {
 
                 row = nrow;
                 col = ncol;
+                System.out.println(row+col);
            }
 
     }
@@ -78,6 +80,20 @@ class Solution2 {
     }
 
     public static void main(String[] args) {
-        
+        char[][] board = {
+            {'5','3','.','.','7','.','.','.','.'},
+            {'6','.','.','1','9','5','.','.','.'},
+            {'.','9','8','.','.','.','.','6','.'},
+            {'8','.','.','.','6','.','.','.','3'},
+            {'4','.','.','8','.','3','.','.','1'},
+            {'7','.','.','.','2','.','.','.','6'},
+            {'.','6','.','.','.','.','2','8','.'},
+            {'.','.','.','4','1','9','.','.','5'},
+            {'.','.','.','.','8','.','.','7','9'}
+        };
+
+        print(board);
+        solveSudoku(board);
+        print(board);
     }
 }
