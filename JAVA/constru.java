@@ -1,23 +1,29 @@
-class A {
-    int a;
-    String b;
-   
+class A{
+    private double r;
+
     A(){
-        a = 22;
-        b = "Mukund";
-        System.out.println(a+" "+b);
+        r = 0.0;
     }
-    
-    A(A ref){
-        int a = ++ref.a;
-        String b = ref.b;
-        System.out.println(a+" "+b);
+
+    A(double redius){
+        this.r = redius;
+    }
+
+    double area(){
+        return 3.14 * r * r;
     }
 }
 
-public class constru {
+class constru {
     public static void main(String[] args) {
-        A r = new A();
-        A r2 = new A(r);
+        A obj = new A();
+        A obj1 = new A(2);
+
+        print(obj);
+        print(obj1);
     }
+
+    public static void print(A obj){
+        System.out.println(obj.area());
+    } 
 }
