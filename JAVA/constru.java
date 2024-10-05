@@ -1,29 +1,32 @@
-class A{
-    private double r;
+// class A{
+//     private double r;
 
-    A(){
-        r = 0.0;
-    }
+//     A(){
+//         r = 0.0;
+//     }
 
-    A(double redius){
-        this.r = redius;
-    }
+//     A(double redius){
+//         this.r = redius;
+//     }
 
-    double area(){
-        return 3.14 * r * r;
-    }
-}
+//     double area(){
+//         return 3.14 * r * r;
+//     }
+// }
 
 class constru {
-    public static void main(String[] args) {
-        A obj = new A();
-        A obj1 = new A(2);
-
-        print(obj);
-        print(obj1);
-    }
-
-    public static void print(A obj){
-        System.out.println(obj.area());
-    } 
+    public static void main( String args[] ) {
+		System.out.println( "AAA" );
+		funTest();
+		System.out.println( "DDD" );
+	}
+	
+	public static void funTest() {
+		int a = 10;
+		System.out.println( "BBB" );
+		if( a == 10 )
+			// System.exit(1);
+            return;
+		System.out.println( "CCC" );
+	}
 }

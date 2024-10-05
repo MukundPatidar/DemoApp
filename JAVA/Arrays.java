@@ -31,4 +31,9 @@ public class Arrays {
        System.out.println("Smallest number is : " + min);
       
    }
+
+public static Object stream(int[] dp) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'stream'");
+}
 }
