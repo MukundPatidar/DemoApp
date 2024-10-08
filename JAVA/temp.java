@@ -1,34 +1,23 @@
-class Shap {
-    void Draw(){
-        System.out.println("Drawing Shap");
-    }
+interface A {
+	void show();
 }
 
-class Triangle extends Shap {
-    void Draw() {
-        System.out.println("Drawing Triangle");
-    }
+interface B {
+	void show();
 }
 
-class Rectengle extends Shap {
-    void Draw() {
-        System.out.println("Drawing Rectangle");
-    }
-}
+class Multiple implements A, B {
+	public void show() {
+		System.out.println("Interface A ");
+	}
+	
+	public void Dips() {
+		System.out.println("Interface B ");
+	}
 
-public class Temp {
-    public static void main(String[] args) {
-        // Shap s = new Shap();
-        // s.Draw();
-
-        Shap s;
-
-        Triangle t = new Triangle();
-        s = t;
-        s.Draw();
-
-        Rectengle r = new Rectengle();
-        s = r;
-        s.Draw();
-    }
+	public static void main(String[] args) {
+		Multiple m = new Multiple();
+		m.show();
+		m.Dips();
+	}
 }

@@ -1,16 +1,32 @@
-import java.util.*;
-
 public class Solutions {
-   public static boolean isElligible(int age) {
-       if(age > 18) {
-           return true;
-       }
-       return false;
-   }
-   public static void main(String args[]) {
-      Scanner sc = new Scanner(System.in);
-      int age = sc.nextInt();
-      System.out.println(isElligible(age));
-      sc.close();
-   }   
+    public static int minLength(String s) {
+        StringBuffer str = new StringBuffer(s);
+        // boolean status1 = true;
+        // boolean status2 = true;
+
+        for (int j = 0; j < str.length(); j++) {
+            // for AB
+            for (int i = 0; i < str.length() - 1; i++) {
+                if (str.charAt(i) == 'A' && str.charAt(i + 1) == 'B') {
+                    str.deleteCharAt(i + 1);
+                    str.deleteCharAt(i);
+                }
+            }
+
+            // for CD
+            for (int i = 0; i < str.length() - 1; i++) {
+                if (str.charAt(i) == 'C' && str.charAt(i + 1) == 'D') {
+                    str.deleteCharAt(i + 1);
+                    str.deleteCharAt(i);
+                }
+            }
+        }
+
+        return str.length();
+    }
+
+    public static void main(String args[]) {
+        System.out.println(minLength("ABFCACDB"));// 2
+        System.out.println(minLength("ACBBD"));// 5
+    }
 }
