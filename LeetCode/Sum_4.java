@@ -22,59 +22,24 @@ public class Sum_4 {
                             continue;
 
                         if (nums[i] + nums[j] + nums[k] + nums[l] == target) {
-
-                            if (status == false) {
-                                innerlist.add(nums[i]);
-                                innerlist.add(nums[j]);
-                                innerlist.add(nums[k]);
-                                innerlist.add(nums[l]);
-                                ans.add(new ArrayList<>(innerlist));
-                                innerlist.clear();
-                                status = true;
-                                if (i != nums.length - 1)
-                                    i++;
-                                if (j != nums.length - 1)
-                                    j++;
-                                if (k != nums.length - 1)
-                                    k++;
-                                if (l != nums.length - 1)
-                                    l++;
-                            }
-
-                            for (int m = 0; m < (ans.size()); m++) {
-                                System.out.println(ans.get(m));
-                                List<Integer> temp = new ArrayList<Integer>(new ArrayList<>(ans.get(m)));
-                                // System.out.println(m+" "+n);
-                                if (temp.contains(i))
-                                    temp.remove((temp.indexOf(i)));
-                                if (temp.contains(j))
-                                    temp.remove((temp.indexOf(j)));
-                                if (temp.contains(k))
-                                    temp.remove((temp.indexOf(k)));
-                                if (temp.contains(l))
-                                    temp.remove((temp.indexOf(l)));
-
-                                if (temp.size() == 0) {
-                                    innerlist.add(nums[i]);
-                                    innerlist.add(nums[j]);
-                                    innerlist.add(nums[k]);
-                                    innerlist.add(nums[l]);
-                                    ans.add(new ArrayList<>(innerlist));
-                                    innerlist.clear();
-
-                                    if (i != nums.length - 1)
-                                        i++;
-                                    if (j != nums.length - 1)
-                                        j++;
-                                    if (k != nums.length - 1)
-                                        k++;
-                                    if (l != nums.length - 1)
-                                        l++;
-                                }
-                            }
+                            innerlist.add(nums[i]);
+                            innerlist.add(nums[j]);
+                            innerlist.add(nums[k]);
+                            innerlist.add(nums[l]);
+                            ans.add(new ArrayList<>(innerlist));
+                            innerlist.clear();
                         }
                     }
                 }
+            }
+        }
+
+        for(int i=0; i<ans.size();i++){
+            for(int j=i+1; j<ans.get(j).size();j++){
+                List<Integer> temp = new ArrayList<>(ans.get(j));
+                boolean status = true;
+
+                if();
             }
         }
 
