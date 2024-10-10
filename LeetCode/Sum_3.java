@@ -1,4 +1,4 @@
-public class Temp {
+public class Sum_3 {
 	public static int threeSumClosest(int[] nums, int target) {
 		int ans = nums[0] + nums[1] + nums[2];
 		int mindiff = Math.abs(ans - target);
