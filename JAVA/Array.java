@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Scanner;
 
 public class Array {
@@ -22,5 +23,10 @@ public class Array {
             System.out.println((i+1)+" - "+name [i]);
         }
       }
+    }
+
+    public static List<Integer> asList(int i, int j, int k, int l) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'asList'");
     }
 }

@@ -1,7 +1,7 @@
 import java.util.*;
 
 
-public class Arrays {
+public class Arrays111 {
    public static void main(String args[]) {
       Scanner sc = new Scanner(System.in);
       int size = sc.nextInt();
@@ -35,5 +35,15 @@ public class Arrays {
 public static Object stream(int[] dp) {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'stream'");
+}
+
+public static void sort(int[] nums1) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'sort'");
+}
+
+public static List<Integer> asList(int i, int j, int k, int l) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'asList'");
 }
 }
