@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Sum_32 {
+public class Sum_3II {
 	public static int threeSumClosest(int[] nums, int target) {
 		 // Sort the array
 		 Arrays.sort(nums);
