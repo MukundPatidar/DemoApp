@@ -1,22 +1,28 @@
 package LeetCode;
 
 public class JumpGame {
-    static int jumps = 0;
-    static int index = 0;
 
-    public boolean canJump(int[] nums) {
+    public static boolean canJump(int[] nums) {
 
-        if (index == nums.length - 1)
-            return true;
+        int max = 0;
 
-        int curIndex = index;
-        for (int i = nums[curIndex]; i >= 1; i--) {
-            index += i;
-            if (canJump(nums))
+        for (int i = 0; i < nums.length; i++) {
+            if (i > max) {
+                return false;
+            }
+            max = Math.max(max, i + nums[i]);
+
+            if (max >= nums.length - 1) {
                 return true;
-            index = curIndex;
+            }
         }
 
         return false;
+    }
+    public static void main(String[] args) {
+        int arr[] = {3,2,1,0,4};
+        int arr1[] = {2,3,1,1,4};
+        System.out.println(canJump(arr));
+        System.out.println(canJump(arr1));
     }
 }
