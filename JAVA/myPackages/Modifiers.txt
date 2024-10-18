@@ -1,0 +1,91 @@
+// Program to  Visibility Control in Another Package.
+
+// First File ( Base.java ) in package p1
+package  p1;
+
+public class  Base 
+{
+	private int n_pri = 1;
+	int n_def = 2;
+	protected int n_pro = 3;
+	public int n_pub = 4;
+
+	public Base() 
+	{
+		System.out.println("base constructor");
+		System.out.println("n_pri = " + n_pri);
+		System.out.println("n_def = " + n_def);
+		System.out.println("n_pro = " + n_pro);
+		System.out.println("n_pub = " + n_pub);
+	}
+}
+
+// Second File ( Derived.java ) in package p2 : 
+package  p2;
+
+class Derived2 extends  p1.Base
+{
+	Derived2()
+	{
+		System.out.println("derived other package constructor");
+		// class only
+		// System.out.println("n_pri = " + n_pri);
+		// class or package only
+		// System.out.println("n_def = " + n_def);
+		System.out.println("n_pro = " + n_pro);
+		System.out.println("n_pub = " + n_pub);
+	}
+}
+
+// Third File ( OtherPackage.java ) in package p2 
+package  p2;
+
+class OtherPackage 
+{
+	OtherPackage() 
+	{
+		p1.Base p = new p1.Base();
+		System.out.println("other package constructor");
+		// class only
+		// System.out.println("n_pri = " + p.n_pri);
+		// class or package only
+		// System.out.println("n_def = " + p.n_def);
+		// class, subclass or package only
+		// System.out.println("n_pro = " + p.n_pro);
+		System.out.println("n_pub = " + p.n_pub);
+	}
+}
+
+// Fourth File ( Demo.java ) in package p2
+package p2;
+
+public class  Demo 
+{
+	public static void main(String args[ ]) 
+	{
+		Derived2 ob1 = new Derived2();
+		OtherPackage ob2 = new OtherPackage();
+	}
+}
+
+
+Output:
+
+ base constructor
+ n_pri = 1
+ n_def = 2
+ n_pro = 3
+ n_pub = 4
+
+ derived other package constructor
+ n_pro = 3
+ n_pub = 4
+
+ base constructor
+ n_pri = 1
+ n_def = 2
+ n_pro = 3
+ n_pub = 4
+
+ other package constructor
+ n_pub = 4
