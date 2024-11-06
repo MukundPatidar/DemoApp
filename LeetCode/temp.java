@@ -1,33 +1,21 @@
 package LeetCode;
 
 public class temp {
-	static void print(int[][] arr){
-		for (int[] is : arr) {
-			for (int i : is) {
-				System.out.print(i + " ");
+	public static void main(String args[]) {
+		char ch = 'A';
+
+		int n = 6;
+
+		for (int i = 0; i < n; i++) {
+			for (int j = i; j >= 0; j--) {
+				if (j % 2 != 0) {
+					System.out.print(Character.toLowerCase(ch) + " ");
+				} else {
+					System.out.print(ch + " ");
+				}
+				ch++;
 			}
 			System.out.println();
 		}
-		System.out.println();
-	} 
-	public static void main(String args[]) {
-		int[][] arr = {
-				{ 1, 2, 3 },
-				{ 4, 5, 6 },
-				{ 7, 8, 9 }
-		};
-
-		print(arr);
-
-		for (int i = 0; i < arr.length; i++) {
-			for (int j = i; j < arr.length; j++) {
-				int temp = arr[j][i];
-				arr[j][i] = arr[i][j];
-				arr[i][j] = temp;
-			}
-		}
-
-		print(arr);
-
 	}
 }
