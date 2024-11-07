@@ -22,6 +22,7 @@ public class Permutations {
 			temp.removeLast();
 			return;
 		}
+		
 		for (int j = 0; j < nums.length; j++) {
 			if(!(temp.contains(nums[j]))){
 				temp.add(nums[j]);

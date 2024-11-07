@@ -13,12 +13,21 @@ public class GreatestCommonDivisorOfStrings {
 
 		for (int i = 0; i < str1.length(); i++) {
 			temp.append(str1.charAt(i));
+			if(str2.contains(temp)){
+				if (Math.max(temp.length(), str.length()) != str.length()) {
+					str.append(temp);
+					temp.delete(0, temp.length());
+				}
+				
+			} else {
+				temp.delete(0, temp.length());
+			}
 		}
 
 		return str.toString();
 	}
 
 	public static void main(String[] args) {
-		System.out.println(gcdOfStrings("ABCABC", "ABC"));
+		System.out.println(gcdOfStrings("ABABAB", "ABAB"));
 	}
 }
