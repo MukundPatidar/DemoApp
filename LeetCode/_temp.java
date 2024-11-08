@@ -17,6 +17,6 @@ public class _temp {
 		System.out.println(str+" "+str.length());
 		System.out.println(table);
 		System.out.println(table.get(3));
-		System.out.println(table.);
+		System.out.println(table);
 	}
 }
