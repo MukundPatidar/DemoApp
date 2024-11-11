@@ -2,20 +2,37 @@ package MultiThreading;
 
 public class B {
 
-	public static void main(String[] args) {
-		A t1 = new A();
-		A t2 = new A();
-		A t3 = new A();
-		t1.setName("thread 1");
-		t2.setName("thread 2");
-		t3.setName("thread 3");
-		System.out.println(t1.isAlive());
-		t1.start();
+	
+
+	// public static void main(String[] agrs) {
+	// 	A t1 = new A();
+	// 	A t2 = new A();
+	// 	A t3 = new A();
+	// 	t1.setName("t1 thread");
+	// 	t2.setName("t2 thread");
+	// 	t3.setName("t3 thread");
+	// 	t1.setPriority(5);
+	// 	t2.setPriority(2);
+	// 	t3.setPriority(8);
+	// 	t1.start();
+	// 	t2.start();
+	// 	t3.start();
+	// }
+
+	// public static void main(String[] args) {
+	// 	A t1 = new A();
+	// 	A t2 = new A();
+	// 	A t3 = new A();
+	// 	t1.setName("thread 1");
+	// 	t2.setName("thread 2");
+	// 	t3.setName("thread 3");
+	// 	System.out.println(t1.isAlive());
+	// 	t1.start();
 		
-		System.out.println(t1.isAlive());
-		System.out.println(t1.isAlive());
-		t1.interrupt();
-	}
+	// 	System.out.println(t1.isAlive());
+	// 	System.out.println(t1.isAlive());
+	// 	t1.interrupt();
+	// }
 
 	// public static void main(String[] args) {
 	// A t1 = new A();
