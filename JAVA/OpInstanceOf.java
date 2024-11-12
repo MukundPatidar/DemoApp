@@ -13,7 +13,7 @@ class XYZ  {
 public class OpInstanceOf {
 	public static void main( String args[ ] ) {
 		ABC a = new ABC();
-        XYZ b = new XYZ();
+        // XYZ b = new XYZ();
 
 
 		if( a  instanceof  ABC ) {

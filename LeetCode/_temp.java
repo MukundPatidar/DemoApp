@@ -1,38 +1,26 @@
 package LeetCode;
 
-import java.util.Arrays;
-
 public class _temp {
-	public static boolean search(int[] nums, int target) {
-		Arrays.sort(nums);
-
-		int left = 0;
-		int right = nums.length - 1;
-
-		while (left < right) {
-			int idx = (right + left) / 2;
-			if (nums[idx] == target) {
-				return true;
-			} else if (nums[left] == target) {
-				return true;
-			} else if (nums[right] == target) {
-				return true;
-			} else if (nums[idx] > target) {
-				right = idx - 1;
-			} else if (nums[idx] < target) {
-				left = idx + 1;
+	public static void main(String args[]) {
+		for (int i = 1; i <= 100; i++) {
+			if (isPrime(i)) {
+				System.out.print(i+", ");
 			}
 		}
-
-		if (left == right && nums[left] == target) {
-			return true;
-		}
-
-		return false;
 	}
 
-	public static void main(String args[]) {
-		int arr[] = { 1, 2, 3 };
-		System.out.println(Arrays.toString(arr));
+	public static boolean isPrime(int n) {
+		if (n <= 1)
+			return false; // Numbers less than or equal to 1 are not prime
+		if (n <= 3)
+			return true; // 2 and 3 are prime numbers
+		if (n % 2 == 0 || n % 3 == 0)
+			return false; // Exclude multiples of 2 and 3
+
+		for (int i = 5; i * i <= n; i += 6) {
+			if (n % i == 0 || n % (i + 2) == 0)
+				return false;
+		}
+		return true;
 	}
 }
