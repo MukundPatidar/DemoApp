@@ -2,26 +2,27 @@ package DSA;
 
 class Stack {
 	private int size;
+	private int top;
+	private int arr[];
 
 	Stack(int size) {
 		this.size = size;
+		this.top = -1;
+		this.arr = new int[size];
 	}
 
-	private int top = 0;
-	private int arr[] = new int[size];
-
 	void push(int value) {
-		if (top == size) {
+		if (top >= size - 1) {
 			System.out.println("Stack is overflow.");
 		} else {
-			arr[top] = value;
 			top++;
+			arr[top] = value;
 			System.out.println(value + " was added to stack.");
 		}
 	}
 
 	void pop() {
-		if (top == 0) {
+		if (top == -1) {
 			System.out.println("Stack is underflow.");
 		} else {
 			System.out.println(arr[top] + " was poped from stack.");
@@ -30,7 +31,7 @@ class Stack {
 	}
 
 	boolean isFull() {
-		if (top >= size) {
+		if (top >= size - 1) {
 			System.out.println("Stack is full.");
 			return true;
 		} else {
@@ -40,7 +41,7 @@ class Stack {
 	}
 
 	boolean isEmpty() {
-		if (top == 0) {
+		if (top == -1) {
 			System.out.println("Stack is empty.");
 			return true;
 		} else {
@@ -58,7 +59,7 @@ class Stack {
 	}
 
 	void count() {
-		System.out.println(top);
+		System.out.println(top + 1);
 	}
 
 	void change(int index, int value) {
@@ -70,10 +71,16 @@ class Stack {
 		}
 	}
 
-	void display(){
-		for (int i = size; i > top; i--) {
-			System.out.println("empty");
+	void display() {
+		// for (int i = size - 1; i > top; i--) {
+		// System.out.println("empty");
+		// }
+		if (top == -1) {
+			System.out.println("Stack is empty.");
+			return;
 		}
+		
+		System.out.println("Stack contents (top to bottom):");
 		for (int i = top; i >= 0; i--) {
 			System.out.println(arr[i]);
 		}
