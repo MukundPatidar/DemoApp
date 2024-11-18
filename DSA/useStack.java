@@ -1,6 +1,6 @@
 package DSA;
 
-public class Main {
+public class useStack {
 	public static void main(String[] args) {
 		Stack myStack = new Stack(5);
 		myStack.isEmpty();
