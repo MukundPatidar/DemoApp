@@ -8,14 +8,14 @@ public class SuperPalindromes {
 	public static int superpalindromesInRange(String left, String right) {
 		int ans = 0;
 
-		Double leftNum = Double.parseDouble(left);
-		Double rightNum = Double.parseDouble(right);
+		Long leftNum = Long.parseLong(left);
+		Long rightNum = Long.parseLong(right);
 
-		for (double i = leftNum; i <= rightNum; i++) {
-			String num = Double.toString(i);
+		for (Long i = leftNum; i <= rightNum; i++) {
+			String num = Long.toString(i);
 
 			if (isPalindrome(num)) {
-				double temp = Math.sqrt(i);
+				Double temp = Math.sqrt(i);
 				String sqrt = Double.toString(temp);
 
 				if (isPalindrome(sqrt)) {
@@ -34,7 +34,7 @@ public class SuperPalindromes {
 
 		boolean status = false;
 		for (int i = 0; i < s.length(); i++) {
-			if(status && s.charAt(i) != '0'){
+			if (status && s.charAt(i) != '0') {
 				return false;
 			}
 			if (s.charAt(i) == '.') {
