@@ -4,12 +4,17 @@ import java.util.*;
 
 public class _temp {
 	public static void main(String args[]) {
-		HashMap<Integer, List<Integer>> myHashMap = new HashMap<>();
+		Set<Integer> h = new HashSet<>();
+		h.add(10);
+		System.out.println(h);
+		h.add(30);
+		System.out.println(h);
+		h.add(20);
+		System.out.println(h);
+		h.add(40);
+		System.out.println(h);
+		h.add(5);
+		System.out.println(h);
 
-		myHashMap.put(10, new ArrayList<>()).add(1);
-		myHashMap.put(10, new ArrayList<>()).add(10);
-		myHashMap.put(101, new ArrayList<>()).add(1);
-		myHashMap.put(1, new ArrayList<>()).add(1);
-		System.out.println(myHashMap);
 	}
 }
