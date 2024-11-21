@@ -4,16 +4,26 @@ using namespace std;
 
 int findUnique(int arr[], int len)
 {
-	sort(arr, len + arr);
-	for (int i = 0; i < len - 1; i += 2)
+	int ans = 0;
+	for (int i = 0; i < len ; i++)
 	{
-		if (arr[i] != arr[i + 1])
-		{
-			return arr[i];
-		}
+		ans = ans ^ arr[i];
 	}
-	return arr[len - 1];
+	return ans;
 }
+
+// int findUnique(int arr[], int len)
+// {
+// 	sort(arr, len + arr);
+// 	for (int i = 0; i < len - 1; i += 2)
+// 	{
+// 		if (arr[i] != arr[i + 1])
+// 		{
+// 			return arr[i];
+// 		}
+// 	}
+// 	return arr[len - 1];
+// }
 
 int main()
 {
