@@ -1,7 +1,7 @@
 package myPackages;
 
 class A {
-    protected static void show() {
+    protected void show() {
         System.out.println("Learn coding..!");
     }
 }

@@ -1,3 +1,5 @@
+package LeetCode;
+
 class Solution {
     static boolean status;
     static int row = 0;

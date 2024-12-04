@@ -34,17 +34,14 @@ public class Arrays111 {
    }
 
 public static Object stream(int[] dp) {
-    // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'stream'");
 }
 
 public static void sort(int[] nums1) {
-    // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'sort'");
 }
 
 public static List<Integer> asList(int i, int j, int k, int l) {
-    // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'asList'");
 }
 }

@@ -1,3 +1,5 @@
+package LeetCode;
+
 public class lengthOfLongestSubstring {
     public static int length(String s) {
         StringBuilder str = new StringBuilder();

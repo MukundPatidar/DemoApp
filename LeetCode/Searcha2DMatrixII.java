@@ -1,7 +1,5 @@
 package LeetCode;
 
-import myPackages.myDefault;
-
 public class Searcha2DMatrixII {
 	public boolean searchMatrix(int[][] matrix, int target) {
 		int i = 0;

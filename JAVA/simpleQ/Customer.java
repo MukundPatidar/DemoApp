@@ -35,6 +35,7 @@ class bankService extends Bank {
         } else {
             System.out.println("Incorrect Password...");
         }
+        s.close();
     }
 
     public void withdraw() {
@@ -50,6 +51,7 @@ class bankService extends Bank {
         } else {
             System.out.println("Incorrect Password...");
         }
+        s.close();
     }
 
     public void checkBal() {
@@ -61,6 +63,7 @@ class bankService extends Bank {
         } else {
             System.out.print("wrong password");
         }
+        s.close();
     }
 }
 
@@ -89,5 +92,6 @@ public class Customer {
                 System.out.print("Invalid choice:");
                 break;
         }
+        s2.close();
     }
 }

@@ -1,5 +1,4 @@
 package LeetCode;
-import java.util.*;
 
 public class PlusOne {
     public int[] plusOne(int[] digits) {

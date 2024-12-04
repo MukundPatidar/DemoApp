@@ -1,5 +1,4 @@
 package myPackages;
-import myPackages.*;
 
 public class BalanceImport {
 	public static void main(String args[]) {

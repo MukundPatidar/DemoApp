@@ -2,7 +2,7 @@ package LeetCode;
 
 public class JumpGameII {
     public static int jump(int[] nums) {
-        
+        return 0;
     }
 
     public static void main(String[] args) {
