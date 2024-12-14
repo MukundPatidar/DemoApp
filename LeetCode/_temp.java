@@ -1,5 +1,6 @@
 package LeetCode;
 
+<<<<<<< HEAD
 import java.util.Arrays;
 
 public class _temp {
@@ -14,5 +15,10 @@ public class _temp {
 			}
 		});
 		System.out.println(Arrays.deepToString(nums));
+=======
+public class _temp {
+	public static void main(String[] args) {
+		System.out.println(2);
+>>>>>>> 2d4b2833c148e007a78ddf346c7195ce7c166e54
 	}
 }
