@@ -27,7 +27,6 @@ public class Permutations {
 			if(!(temp.contains(nums[j]))){
 				temp.add(nums[j]);
 				helper(i+1, nums);
-				
 			}
 		}
 	}
